@@ -21,6 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    [[LongLinkTool sharedLongLink] createLongLinkWithAddress:@"10.16.208.39" ports:@[@(8079)] clientVersion:200];
     return YES;
 }
 
