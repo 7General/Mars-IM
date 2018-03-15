@@ -11,6 +11,7 @@
 
 #import <mars/xlog/appender.h>
 
+
 @interface AppDelegate ()
 
 @end
@@ -46,7 +47,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     [[LongLinkTool sharedLongLink] destoryLongLink];
-    appender_close();
+//    appender_close();
     
 }
 
