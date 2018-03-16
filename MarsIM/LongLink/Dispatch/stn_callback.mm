@@ -20,6 +20,8 @@
 
 #include "NetworkService.h"
 
+#import "LongLinkTool.h"
+
 namespace mars {
     namespace stn {
         
@@ -49,14 +51,16 @@ void StnCallBack::TrafficData(ssize_t _send, ssize_t _recv) {
         
 std::vector<std::string> StnCallBack::OnNewDns(const std::string& _host) {
     std::vector<std::string> vector;
-    vector.push_back("118.89.24.72");
+
     return vector;
 }
-
+        
+// 接受消息
 void StnCallBack::OnPush(uint64_t _channel_id, uint32_t _cmdid, uint32_t _taskid, const AutoBuffer& _body, const AutoBuffer& _extend) {
     if (_body.Length() > 0) {
         NSData* recvData = [NSData dataWithBytes:(const void *) _body.Ptr() length:_body.Length()];
-        [[NetworkService sharedInstance] OnPushWithCmd:_cmdid data:recvData];
+//        [[NetworkService sharedInstance] OnPushWithCmd:_cmdid data:recvData];
+        [[LongLinkTool sharedLongLink] OnPushWithCmd:_cmdid data:recvData];
     }
     
 }
@@ -89,7 +93,7 @@ int StnCallBack::OnTaskEnd(uint32_t _taskid, void* const _user_context, int _err
     return (int)[[NetworkService sharedInstance] OnTaskEndWithTaskID:_taskid userContext:_user_context errType:_error_type errCode:_error_code];
 
 }
-
+// 向服务器发送确认信息
 void StnCallBack::ReportConnectStatus(int _status, int longlink_status) {
     
     switch (longlink_status) {

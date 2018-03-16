@@ -28,14 +28,30 @@ typedef enum : int32_t {
 
 @interface CGITask : NSObject
 
+@property(nonatomic) uint32_t cmdid;
+@property(nonatomic) ChannelType channel_select;
+@property(nonatomic, copy) NSString *cgi;
+@property(nonatomic, copy) NSString *host;
+
+@property (nonatomic) BOOL send_only;
+@property (nonatomic) BOOL need_auth;
+@property (nonatomic) int32_t  retry_count;
+
+
 - (id)init;
 
 - (id)initAll:(ChannelType)ChannelType AndCmdId:(uint32_t)cmdId AndCGIUri:(NSString*)cgiUri AndHost:(NSString*)host;
 
 @property(nonatomic) uint32_t taskid;
-@property(nonatomic) ChannelType channel_select;
-@property(nonatomic) uint32_t cmdid;
-@property(nonatomic, copy) NSString *cgi;
-@property(nonatomic, copy) NSString *host;
+
+
+// for longlink
+@property (nonatomic, copy) NSData * requestData;
+- (void)onDecodeData:(NSData *)responseData;
+- (void)onTaskEnd:(int)errType code:(int)errCode;
+
+
+
+
 
 @end

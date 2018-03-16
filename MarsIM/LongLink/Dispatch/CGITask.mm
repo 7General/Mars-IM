@@ -23,10 +23,11 @@
 @implementation CGITask
 
 - (id)init {
-
     if (self = [super init]) {
         self.channel_select = ChannelType_All;
-        
+        self.send_only = false;
+        self.need_auth = false;
+        self.retry_count = 3;
     }
     
     return self;
@@ -40,11 +41,18 @@
         self.cgi = cgiUri;
         self.host = host;
     }
-    
     return self;
 }
 
 - (void)dealloc {
+    
 }
+- (void)onDecodeData:(NSData *)responseData {
+    
+}
+- (void)onTaskEnd:(int)errType code:(int)errCode {
+    
+}
+
 
 @end

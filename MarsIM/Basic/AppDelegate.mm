@@ -48,7 +48,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     [[LongLinkTool sharedLongLink] destoryLongLink];
-//    appender_close();
+    appender_close();
     
 }
 

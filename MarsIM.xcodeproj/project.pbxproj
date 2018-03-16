@@ -61,7 +61,7 @@
 		22B4CAA0205A427800CBD82F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B4CA9E205A427800CBD82F /* Main.storyboard */; };
 		22B4CAA2205A427800CBD82F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B4CAA1205A427800CBD82F /* Assets.xcassets */; };
 		22B4CAA5205A427800CBD82F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B4CAA3205A427800CBD82F /* LaunchScreen.storyboard */; };
-		22B4CAA8205A427800CBD82F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B4CAA7205A427800CBD82F /* main.m */; };
+		22B4CAA8205A427800CBD82F /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22B4CAA7205A427800CBD82F /* main.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,7 +176,7 @@
 		22B4CAA1205A427800CBD82F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22B4CAA4205A427800CBD82F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22B4CAA6205A427800CBD82F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22B4CAA7205A427800CBD82F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		22B4CAA7205A427800CBD82F /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		22B4CB4C205A481600CBD82F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22B4CB4E205A482200CBD82F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		22B4CB50205A482B00CBD82F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -432,7 +432,7 @@
 				22B4CAA1205A427800CBD82F /* Assets.xcassets */,
 				22B4CAA3205A427800CBD82F /* LaunchScreen.storyboard */,
 				22B4CAA6205A427800CBD82F /* Info.plist */,
-				22B4CAA7205A427800CBD82F /* main.m */,
+				22B4CAA7205A427800CBD82F /* main.mm */,
 			);
 			path = MarsIM;
 			sourceTree = "<group>";
@@ -570,7 +570,7 @@
 				220B1DC4205A78DF00EE68BF /* GPBCodedInputStream.m in Sources */,
 				220B1DCB205A78DF00EE68BF /* GPBRootObject.m in Sources */,
 				220B1DBA205A78DF00EE68BF /* app_callback.mm in Sources */,
-				22B4CAA8205A427800CBD82F /* main.m in Sources */,
+				22B4CAA8205A427800CBD82F /* main.mm in Sources */,
 				220B1DC8205A78DF00EE68BF /* GPBExtensionInternals.m in Sources */,
 				220B1DD1205A78DF00EE68BF /* Any.pbobjc.m in Sources */,
 				220B1DD4205A78DF00EE68BF /* Empty.pbobjc.m in Sources */,

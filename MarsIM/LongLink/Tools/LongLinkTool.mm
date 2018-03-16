@@ -82,6 +82,21 @@ using namespace mars::stn;
 
 
 
+
+/* 接受消息和cmdid */
+- (void)OnPushWithCmd:(NSInteger)cid data:(NSData *)data {
+    
+}
+
+/* 向服务器确认收到消息 */
+- (void)OnConnectionStatusChange:(int)status longConnStatus:(int32_t)longConnStatus {
+    
+}
+
+
+
+
+
 #pragma mark - NetworkStatusDelegate
 -(void)ReachabilityChange:(UInt32)uiFlags {
     if ((uiFlags & kSCNetworkReachabilityFlagsConnectionRequired) == 0) {

@@ -53,7 +53,6 @@ static NetworkService * sharedSingleton = nil;
             sharedSingleton = [[NetworkService alloc] init];
         }
     }
-
     return sharedSingleton;
 }
 
@@ -61,42 +60,42 @@ static NetworkService * sharedSingleton = nil;
     
 }
 
-- (void)setCallBack {
-    mars::stn::SetCallback(mars::stn::StnCallBack::Instance());
-    mars::app::SetCallback(mars::app::AppCallBack::Instance());
-}
+//- (void)setCallBack {
+//    mars::stn::SetCallback(mars::stn::StnCallBack::Instance());
+//    mars::app::SetCallback(mars::app::AppCallBack::Instance());
+//}
 
-- (void) createMars {
-    mars::baseevent::OnCreate();
-}
+//- (void) createMars {
+//    mars::baseevent::OnCreate();
+//}
 
-- (void)setClientVersion:(UInt32)clientVersion {
-    mars::stn::SetClientVersion(clientVersion);
-}
+//- (void)setClientVersion:(UInt32)clientVersion {
+//    mars::stn::SetClientVersion(clientVersion);
+//}
 
-- (void)setShortLinkDebugIP:(NSString *)IP port:(const unsigned short)port {
-    std::string ipAddress([IP UTF8String]);
-    mars::stn::SetShortlinkSvrAddr(port, ipAddress);
-}
+//- (void)setShortLinkDebugIP:(NSString *)IP port:(const unsigned short)port {
+//    std::string ipAddress([IP UTF8String]);
+//    mars::stn::SetShortlinkSvrAddr(port, ipAddress);
+//}
+//
+//- (void)setShortLinkPort:(const unsigned short)port {
+//    mars::stn::SetShortlinkSvrAddr(port, "");
+//}
 
-- (void)setShortLinkPort:(const unsigned short)port {
-    mars::stn::SetShortlinkSvrAddr(port, "");
-}
+//- (void)setLongLinkAddress:(NSString *)string port:(const unsigned short)port debugIP:(NSString *)IP {
+//    std::string ipAddress([string UTF8String]);
+//    std::string debugIP([IP UTF8String]);
+//    std::vector<uint16_t> ports;
+//    ports.push_back(port);
+//    mars::stn::SetLonglinkSvrAddr(ipAddress,ports,debugIP);
+//}
 
-- (void)setLongLinkAddress:(NSString *)string port:(const unsigned short)port debugIP:(NSString *)IP {
-    std::string ipAddress([string UTF8String]);
-    std::string debugIP([IP UTF8String]);
-    std::vector<uint16_t> ports;
-    ports.push_back(port);
-    mars::stn::SetLonglinkSvrAddr(ipAddress,ports,debugIP);
-}
-
-- (void)setLongLinkAddress:(NSString *)string port:(const unsigned short)port {
-    std::string ipAddress([string UTF8String]);
-    std::vector<uint16_t> ports;
-    ports.push_back(port);
-    mars::stn::SetLonglinkSvrAddr(ipAddress, ports, "");
-}
+//- (void)setLongLinkAddress:(NSString *)string port:(const unsigned short)port {
+//    std::string ipAddress([string UTF8String]);
+//    std::vector<uint16_t> ports;
+//    ports.push_back(port);
+//    mars::stn::SetLonglinkSvrAddr(ipAddress, ports, "");
+//}
 
 - (void)makesureLongLinkConnect {
     mars::stn::MakesureLonglinkConnected();
@@ -134,9 +133,9 @@ static NetworkService * sharedSingleton = nil;
 
 
 // event reporting
-- (void)reportEvent_OnForeground:(BOOL)isForeground {
-    mars::baseevent::OnForeground(isForeground);
-}
+//- (void)reportEvent_OnForeground:(BOOL)isForeground {
+//    mars::baseevent::OnForeground(isForeground);
+//}
 
 - (void)reportEvent_OnNetworkChange {
     mars::baseevent::OnNetworkChange();
