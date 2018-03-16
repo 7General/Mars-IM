@@ -32,6 +32,10 @@
     
     return self;
 }
+- (id)initAll:(ChannelType)ChannelType AndCmdId:(uint32_t)cmdId {
+    return [self initAll:ChannelType AndCmdId:cmdId AndCGIUri:@"" AndHost:@""];
+}
+
 
 - (id)initAll:(ChannelType)ChannelType AndCmdId:(uint32_t)cmdId AndCGIUri:(NSString*)cgiUri AndHost:(NSString*)host {
     

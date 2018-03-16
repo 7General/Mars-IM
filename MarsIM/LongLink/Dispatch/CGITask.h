@@ -40,6 +40,9 @@ typedef enum : int32_t {
 
 - (id)init;
 
+
+- (id)initAll:(ChannelType)ChannelType AndCmdId:(uint32_t)cmdId;
+
 - (id)initAll:(ChannelType)ChannelType AndCmdId:(uint32_t)cmdId AndCGIUri:(NSString*)cgiUri AndHost:(NSString*)host;
 
 @property(nonatomic) uint32_t taskid;

@@ -118,12 +118,20 @@ void StnCallBack::ReportConnectStatus(int _status, int longlink_status) {
 // 需要组件组包，发送一个req过去，网络成功会有resp，但没有taskend，处理事务时要注意网络时序
 // 不需组件组包，使用长链做一个sync，不用重试
 int  StnCallBack::GetLonglinkIdentifyCheckBuffer(AutoBuffer& _identify_buffer, AutoBuffer& _buffer_hash, int32_t& _cmdid) {
-    
+    _cmdid = 1001;
+    NSData * requestData = [[LongLinkTool sharedLongLink] authRequestData];
+    if (requestData) {
+        _identify_buffer.AllocWrite(requestData.length);
+        _identify_buffer.Write(requestData.bytes,requestData.length);
+        
+        return IdentifyMode::kCheckNow;
+    }
     return IdentifyMode::kCheckNever;
 }
 
 bool StnCallBack::OnLonglinkIdentifyResponse(const AutoBuffer& _response_buffer, const AutoBuffer& _identify_buffer_hash) {
-    
+    NSData* responseData = [NSData dataWithBytes:(const void *) _response_buffer.Ptr() length:_response_buffer.Length()];
+    [[LongLinkTool sharedLongLink] authResponseData:responseData];
     return false;
 }
 //

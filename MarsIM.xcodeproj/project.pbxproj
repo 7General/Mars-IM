@@ -52,7 +52,8 @@
 		220B1E7F205A7BF800EE68BF /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 220B1C96205A762400EE68BF /* libresolv.9.tbd */; };
 		220B1E84205B761000EE68BF /* auth.proto in Resources */ = {isa = PBXBuildFile; fileRef = 220B1E82205B761000EE68BF /* auth.proto */; };
 		220B1E85205B761000EE68BF /* gen_proto.sh in Resources */ = {isa = PBXBuildFile; fileRef = 220B1E83205B761000EE68BF /* gen_proto.sh */; };
-		220B1E88205B837D00EE68BF /* Auth.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1E87205B837D00EE68BF /* Auth.pbobjc.m */; };
+		220B1E88205B837D00EE68BF /* Auth.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1E87205B837D00EE68BF /* Auth.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		220B1E8B205B910400EE68BF /* AuthTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1E8A205B910400EE68BF /* AuthTask.m */; };
 		22B4CA9A205A427800CBD82F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22B4CA99205A427800CBD82F /* AppDelegate.mm */; };
 		22B4CA9D205A427800CBD82F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B4CA9C205A427800CBD82F /* ViewController.m */; };
 		22B4CAA0205A427800CBD82F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B4CA9E205A427800CBD82F /* Main.storyboard */; };
@@ -159,6 +160,8 @@
 		220B1E83205B761000EE68BF /* gen_proto.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = gen_proto.sh; sourceTree = "<group>"; };
 		220B1E86205B837C00EE68BF /* Auth.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Auth.pbobjc.h; sourceTree = "<group>"; };
 		220B1E87205B837D00EE68BF /* Auth.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Auth.pbobjc.m; sourceTree = "<group>"; };
+		220B1E89205B910400EE68BF /* AuthTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthTask.h; sourceTree = "<group>"; };
+		220B1E8A205B910400EE68BF /* AuthTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthTask.m; sourceTree = "<group>"; };
 		22B4CA95205A427800CBD82F /* MarsIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B4CA98205A427800CBD82F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		22B4CA99205A427800CBD82F /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 		220B1D44205A78DF00EE68BF /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				220B1E89205B910400EE68BF /* AuthTask.h */,
+				220B1E8A205B910400EE68BF /* AuthTask.m */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -536,6 +541,7 @@
 				220B1DB8205A78DF00EE68BF /* Person.pbobjc.m in Sources */,
 				220B1DBB205A78DF00EE68BF /* CGITask.mm in Sources */,
 				220B1DD5205A78DF00EE68BF /* FieldMask.pbobjc.m in Sources */,
+				220B1E8B205B910400EE68BF /* AuthTask.m in Sources */,
 				220B1DD2205A78DF00EE68BF /* Api.pbobjc.m in Sources */,
 				220B1DCA205A78DF00EE68BF /* GPBMessage.m in Sources */,
 				220B1DC7205A78DF00EE68BF /* GPBDictionary.m in Sources */,

@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "LongLinkTool.h"
+#import "Auth.pbobjc.h"
 
-@interface ViewController ()
-
+@interface ViewController ()<GZIMLongLinkAuthDelegate>
+@property (nonatomic) BOOL authed;
 @end
 
 @implementation ViewController
@@ -17,25 +19,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    NSString * str = @"GvGWzwhTWPXT4JHsDyDlxeHj+/tfv1VWa3/vFRS6z8vTal1+aP91Hr46ObO99eW4EyRzkHoKDUX+0fxRDjrEEONZpKA4fAmMOaoUPCec+uMJbN35xMl6zhIaqruVSLVDb79YnDlYZH3Hn28vXmv//JJ//SjzuDH48MjW6M3E3HxxY3tzQcLa3ZiVZjIanNBiRZazy9H3UnEpJJyjHUkXJAEIumDx8HiRFA7mwWDElLu0x0s+JlqBdq1Cwrbm+cmf370Ua6gsP3iGIh+5/T1ZcSDKDNrrrWg/+d/5z/+v3kzLpWI3HAA";
-//
-//    BOOL isValte = [self validateBase64:str];
-//    NSLog(@"-------->>>>>:%d",isValte);
-//
+    [[LongLinkTool sharedLongLink] setAuthDelegate:self];
     
 }
+#pragma mark authDelegate
+- (BOOL)longLinkAuthRequestWithUid:(NSString *__autoreleasing *)uid token:(NSString *__autoreleasing *)token domain:(int32_t *)domain
+{
+    _authed = NO;
+//    if (self.isLogin) {
+        *uid = @"222594";
+        *token = @"3acefd5c4fbc5644fcd1fab4865fc230";
+        *domain = 0;
+        return YES;
+//    }
+//    return NO;
+}
 
+- (BOOL)longlinkAuthResponseWithStatus:(int32_t)status errCode:(int32_t)code errMsg:(NSString *)msg
+{
+    return [self p_parseAuthStatus:status errCode:code andReason:msg];
+}
 
-//- (BOOL)validateBase64:(NSString *)baseStr {
-//    NSString *emailRegex = @"[+a-zA-Z0-9/]+=*";
-//    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-//    return [emailTest evaluateWithObject:baseStr];
-//}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (BOOL)p_parseAuthStatus:(int32_t)status errCode:(int32_t)code andReason:(NSString *)reason
+{
+    _authed = status == AuthResponse_Status_Ok;
+//    XLOG_INFO(@"AuthResponse status=%@, errCode=%d, errMsg:%@", _authed?@"AuthResponse_Status_Ok":@"AuthResponse_Status_Err", code, reason);
+    NSLog(@"------------------认证成功");
+    // 认证成功，进行拉取离线消息
+    if (_authed) {
+       
+        
+    } else {
+        
+    }
+    
+    return _authed;
 }
 
 

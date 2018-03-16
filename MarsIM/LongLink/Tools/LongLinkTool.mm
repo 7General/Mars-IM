@@ -27,6 +27,8 @@
 #import "NetworkStatus.h"
 #import "NetworkStatus.h"
 
+#import "Auth.pbobjc.h"
+
 
 
 using namespace mars::stn;
@@ -155,6 +157,37 @@ using namespace mars::stn;
 }
 
 
+// auth认证开始
+/* 认证期间发送数据 */
+- (NSData*)authRequestData
+{
+    NSData* data = NULL;
+    if (_authDelegate && [_authDelegate respondsToSelector:@selector(longLinkAuthRequestWithUid:token:domain:)]) {
+        NSString *uid = nil;
+        NSString *token = nil;
+        int32_t domain;
+        BOOL ok = [_authDelegate longLinkAuthRequestWithUid:&uid token:&token domain:&domain];
+        if (ok) {
+            AuthRequest *request = [AuthRequest new];
+            request.uid = uid;
+            request.token = token;
+            request.domain = domain;
+            request.timestamp = (int64_t)([[NSDate date] timeIntervalSince1970]*1000);
+            data = [request data];
+        }
+    }
+    return data;
+}
+/* 认证期间接受数据 */
+- (BOOL)authResponseData:(NSData*)responseData
+{
+    BOOL authed = NO;
+    if (_authDelegate && [_authDelegate respondsToSelector:@selector(longlinkAuthResponseWithStatus:errCode:errMsg:)]) {
+        AuthResponse *response = [AuthResponse parseFromData:responseData error:nil];
+        authed = [_authDelegate longlinkAuthResponseWithStatus:response.status errCode:response.errCode errMsg:response.errMsg];
+    }
+    return authed;
+}
 
 
 

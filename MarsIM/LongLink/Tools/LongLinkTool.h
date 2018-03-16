@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol GZIMLongLinkAuthDelegate <NSObject>
+@optional
+- (BOOL)longLinkAuthed;
+- (BOOL)longLinkAuthRequestWithUid:(NSString **)uid token:(NSString **)token domain:(int32_t *)domain;
+- (BOOL)longlinkAuthResponseWithStatus:(int32_t)status errCode:(int32_t)code errMsg:(NSString *)msg;
+@end
+
+
 @interface LongLinkTool : NSObject
 + (instancetype)sharedLongLink;
 
@@ -29,7 +37,12 @@
 - (int)Buffer2ResponseWithTaskID:(uint32_t)tid ResponseData:(NSData *)data userContext:(const void *)context;
 /* 接受结束相应 */
 - (int)OnTaskEndWithTaskID:(uint32_t)tid userContext:(const void *)context errType:(int)errtype errCode:(int)errcode;
-/* 长连接的状态变化 */
-- (void)OnConnectionStatusChange:(int)status longConnStatus:(int)longConnStatus;
+
+
+/* auth认证 */
+@property (nonatomic, weak) id<GZIMLongLinkAuthDelegate> authDelegate;
+- (NSData*)authRequestData;
+/* 认证期间接受数据 */
+- (BOOL)authResponseData:(NSData*)responseData;
 
 @end
