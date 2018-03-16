@@ -154,13 +154,14 @@ static NetworkService * sharedSingleton = nil;
     return [_delegate OnPushWithCmd:cid data:data];
 }
 
-- (NSData*)Request2BufferWithTaskID:(uint32_t)tid userContext:(const void *)context {
-    CGITask *task = (__bridge CGITask *)context;
-    return [_delegate Request2BufferWithTaskID:tid task:task];
-}
+//- (NSData*)Request2BufferWithTaskID:(uint32_t)tid userContext:(const void *)context {
+//    CGITask *task = (__bridge CGITask *)context;
+//    return [_delegate Request2BufferWithTaskID:tid task:task];
+//}
 
 - (NSInteger)Buffer2ResponseWithTaskID:(uint32_t)tid ResponseData:(NSData *)data userContext:(const void *)context {
     CGITask *task = (__bridge CGITask *)context;
+    
     return [_delegate Buffer2ResponseWithTaskID:tid responseData:data task:task];
 }
 

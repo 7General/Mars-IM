@@ -33,6 +33,9 @@ using namespace mars::stn;
 
 
 @interface LongLinkTool()<NetworkStatusDelegate>
+/* 发送的task */
+@property (nonatomic, strong) NSMutableDictionary * sendTaskDictionary;
+
 @end
 
 @implementation LongLinkTool
@@ -46,7 +49,14 @@ using namespace mars::stn;
     return sharedSingleton;
 }
 
-
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.sendTaskDictionary = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
 
 
 
@@ -88,10 +98,62 @@ using namespace mars::stn;
     
 }
 
-/* 向服务器确认收到消息 */
+/* 确认长连接状态 */
 - (void)OnConnectionStatusChange:(int)status longConnStatus:(int32_t)longConnStatus {
-    
+//    GZIMLongLinkStatus llStatus;
+//    switch (longConnStatus) {
+//        case 4:
+//            llStatus = GZIMLongLinkStatusConnected;
+//            break;
+//        case 3:
+//            llStatus = GZIMLongLinkStatusConnecting;
+//            break;
+//        default:
+//            llStatus = GZIMLongLinkStatusDisconnected;
+//            break;
+//    }
+//    if (_connectDelegate && [_connectDelegate respondsToSelector:@selector(longlinkContectStatusDidChanged:)]) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [_connectDelegate longlinkContectStatusDidChanged:llStatus];
+//        });
+//    } else {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [[NSNotificationCenter defaultCenter] postNotificationName:kGZIMLongLinkStatusObserverName object:nil userInfo:@{kGZIMLongLinkStatus:@(llStatus)}];
+//        });
+//    }
 }
+
+
+- (NSData *)Request2BufferWithTaskID:(uint32_t)tid userContext:(const void *)context {
+    NSData * data = NULL;
+    CGITask * task = [self.sendTaskDictionary objectForKey:@(tid)];
+    if (task) {
+        data = [task requestData];
+    }
+    if (task.send_only) {
+        [self.sendTaskDictionary removeObjectForKey:@(tid)];
+    }
+    return data;
+}
+
+
+- (int)Buffer2ResponseWithTaskID:(uint32_t)tid ResponseData:(NSData *)data userContext:(const void *)context {
+    CGITask *task = [_sendTaskDictionary objectForKey:@(tid)];
+    if (task) {
+        [task onDecodeData:data];
+    }
+    return 0;
+}
+
+- (int)OnTaskEndWithTaskID:(uint32_t)tid userContext:(const void *)context errType:(int)errtype errCode:(int)errcode {
+    CGITask *task = [_sendTaskDictionary objectForKey:@(tid)];
+    if (task) {
+        [task onTaskEnd:errtype code:errcode];
+    }
+    [_sendTaskDictionary removeObjectForKey:@(tid)];
+    return 0;
+}
+
 
 
 

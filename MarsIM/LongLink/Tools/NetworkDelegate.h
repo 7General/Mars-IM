@@ -34,7 +34,7 @@
 @optional - (NSArray *)OnNewDns:(NSString *)address;
 @optional - (void)OnPushWithCmd:(NSInteger)cid data:(NSData *)data;
 
-@required - (NSData*)Request2BufferWithTaskID:(uint32_t)tid task:(CGITask *)task;
+//@required - (NSData*)Request2BufferWithTaskID:(uint32_t)tid task:(CGITask *)task;
 @required - (NSInteger)Buffer2ResponseWithTaskID:(uint32_t)tid responseData:(NSData *)data task:(CGITask *)task;
 //
 @required - (NSInteger)OnTaskEndWithTaskID:(uint32_t)tid task:(CGITask *)task errType:(uint32_t)errtype errCode:(uint32_t)errcode;

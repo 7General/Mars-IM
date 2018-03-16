@@ -59,14 +59,14 @@ std::vector<std::string> StnCallBack::OnNewDns(const std::string& _host) {
 void StnCallBack::OnPush(uint64_t _channel_id, uint32_t _cmdid, uint32_t _taskid, const AutoBuffer& _body, const AutoBuffer& _extend) {
     if (_body.Length() > 0) {
         NSData* recvData = [NSData dataWithBytes:(const void *) _body.Ptr() length:_body.Length()];
-//        [[NetworkService sharedInstance] OnPushWithCmd:_cmdid data:recvData];
         [[LongLinkTool sharedLongLink] OnPushWithCmd:_cmdid data:recvData];
     }
     
 }
 
 bool StnCallBack::Req2Buf(uint32_t _taskid, void* const _user_context, AutoBuffer& _outbuffer, AutoBuffer& _extend, int& _error_code, const int _channel_select) {
-    NSData* requestData =  [[NetworkService sharedInstance] Request2BufferWithTaskID:_taskid userContext:_user_context];
+    /* 发送时的requestData */
+    NSData * requestData = [[LongLinkTool sharedLongLink] Request2BufferWithTaskID:_taskid userContext:_user_context];
     if (requestData == nil) {
         requestData = [[NSData alloc] init];
     }
@@ -79,7 +79,8 @@ int StnCallBack::Buf2Resp(uint32_t _taskid, void* const _user_context, const Aut
     
     int handle_type = mars::stn::kTaskFailHandleNormal;
     NSData* responseData = [NSData dataWithBytes:(const void *) _inbuffer.Ptr() length:_inbuffer.Length()];
-    NSInteger errorCode = [[NetworkService sharedInstance] Buffer2ResponseWithTaskID:_taskid ResponseData:responseData userContext:_user_context];
+    /* 返回的reponseData数据 */
+    NSInteger errorCode = [[LongLinkTool sharedLongLink]Buffer2ResponseWithTaskID:_taskid ResponseData:responseData userContext:_user_context];
     
     if (errorCode != 0) {
         handle_type = mars::stn::kTaskFailHandleDefault;
@@ -89,13 +90,13 @@ int StnCallBack::Buf2Resp(uint32_t _taskid, void* const _user_context, const Aut
 }
 
 int StnCallBack::OnTaskEnd(uint32_t _taskid, void* const _user_context, int _error_type, int _error_code) {
-    
-    return (int)[[NetworkService sharedInstance] OnTaskEndWithTaskID:_taskid userContext:_user_context errType:_error_type errCode:_error_code];
-
+    /* 接受结束的数据 */
+    return [[LongLinkTool sharedLongLink] OnTaskEndWithTaskID:_taskid userContext:_user_context errType:_error_type errCode:_error_code];
 }
-// 向服务器发送确认信息
+        
+// 向服务器发送长连接连接状态确认信息
 void StnCallBack::ReportConnectStatus(int _status, int longlink_status) {
-    
+    [[LongLinkTool sharedLongLink] OnConnectionStatusChange:_status longConnStatus:longlink_status];
     switch (longlink_status) {
         case mars::stn::kServerFailed:
         case mars::stn::kServerDown:

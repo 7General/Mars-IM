@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		220B1DB2205A78DF00EE68BF /* Chat.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1D47205A78DF00EE68BF /* Chat.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		220B1DB3205A78DF00EE68BF /* chat.proto in Resources */ = {isa = PBXBuildFile; fileRef = 220B1D48205A78DF00EE68BF /* chat.proto */; };
-		220B1DB4205A78DF00EE68BF /* Main.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1D4A205A78DF00EE68BF /* Main.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		220B1DB5205A78DF00EE68BF /* main.proto in Resources */ = {isa = PBXBuildFile; fileRef = 220B1D4B205A78DF00EE68BF /* main.proto */; };
-		220B1DB6205A78DF00EE68BF /* Messagepush.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1D4D205A78DF00EE68BF /* Messagepush.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		220B1DB7205A78DF00EE68BF /* messagepush.proto in Resources */ = {isa = PBXBuildFile; fileRef = 220B1D4E205A78DF00EE68BF /* messagepush.proto */; };
 		220B1DB8205A78DF00EE68BF /* Person.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1D50205A78DF00EE68BF /* Person.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		220B1DB9205A78DF00EE68BF /* Person.proto in Resources */ = {isa = PBXBuildFile; fileRef = 220B1D51205A78DF00EE68BF /* Person.proto */; };
 		220B1DBA205A78DF00EE68BF /* app_callback.mm in Sources */ = {isa = PBXBuildFile; fileRef = 220B1D54205A78DF00EE68BF /* app_callback.mm */; };
@@ -56,6 +50,9 @@
 		220B1E7D205A7BD800EE68BF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B4CB4E205A482200CBD82F /* libz.tbd */; };
 		220B1E7E205A7BDF00EE68BF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B4CB50205A482B00CBD82F /* SystemConfiguration.framework */; };
 		220B1E7F205A7BF800EE68BF /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 220B1C96205A762400EE68BF /* libresolv.9.tbd */; };
+		220B1E84205B761000EE68BF /* auth.proto in Resources */ = {isa = PBXBuildFile; fileRef = 220B1E82205B761000EE68BF /* auth.proto */; };
+		220B1E85205B761000EE68BF /* gen_proto.sh in Resources */ = {isa = PBXBuildFile; fileRef = 220B1E83205B761000EE68BF /* gen_proto.sh */; };
+		220B1E88205B837D00EE68BF /* Auth.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1E87205B837D00EE68BF /* Auth.pbobjc.m */; };
 		22B4CA9A205A427800CBD82F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22B4CA99205A427800CBD82F /* AppDelegate.mm */; };
 		22B4CA9D205A427800CBD82F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B4CA9C205A427800CBD82F /* ViewController.m */; };
 		22B4CAA0205A427800CBD82F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B4CA9E205A427800CBD82F /* Main.storyboard */; };
@@ -67,15 +64,6 @@
 /* Begin PBXFileReference section */
 		220B1C94205A75E500EE68BF /* mars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mars.framework; path = MarsIM/LongLink/Mars/Source/mars.framework; sourceTree = "<group>"; };
 		220B1C96205A762400EE68BF /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
-		220B1D46205A78DF00EE68BF /* Chat.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chat.pbobjc.h; sourceTree = "<group>"; };
-		220B1D47205A78DF00EE68BF /* Chat.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chat.pbobjc.m; sourceTree = "<group>"; };
-		220B1D48205A78DF00EE68BF /* chat.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = chat.proto; sourceTree = "<group>"; };
-		220B1D49205A78DF00EE68BF /* Main.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Main.pbobjc.h; sourceTree = "<group>"; };
-		220B1D4A205A78DF00EE68BF /* Main.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Main.pbobjc.m; sourceTree = "<group>"; };
-		220B1D4B205A78DF00EE68BF /* main.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.proto; sourceTree = "<group>"; };
-		220B1D4C205A78DF00EE68BF /* Messagepush.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Messagepush.pbobjc.h; sourceTree = "<group>"; };
-		220B1D4D205A78DF00EE68BF /* Messagepush.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Messagepush.pbobjc.m; sourceTree = "<group>"; };
-		220B1D4E205A78DF00EE68BF /* messagepush.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = messagepush.proto; sourceTree = "<group>"; };
 		220B1D4F205A78DF00EE68BF /* Person.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.pbobjc.h; sourceTree = "<group>"; };
 		220B1D50205A78DF00EE68BF /* Person.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.pbobjc.m; sourceTree = "<group>"; };
 		220B1D51205A78DF00EE68BF /* Person.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Person.proto; sourceTree = "<group>"; };
@@ -167,6 +155,10 @@
 		220B1DAF205A78DF00EE68BF /* NetworkService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetworkService.mm; sourceTree = "<group>"; };
 		220B1DB0205A78DF00EE68BF /* PushNotifyDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotifyDelegate.h; sourceTree = "<group>"; };
 		220B1DB1205A78DF00EE68BF /* UINotifyDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINotifyDelegate.h; sourceTree = "<group>"; };
+		220B1E82205B761000EE68BF /* auth.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = auth.proto; sourceTree = "<group>"; };
+		220B1E83205B761000EE68BF /* gen_proto.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = gen_proto.sh; sourceTree = "<group>"; };
+		220B1E86205B837C00EE68BF /* Auth.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Auth.pbobjc.h; sourceTree = "<group>"; };
+		220B1E87205B837D00EE68BF /* Auth.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Auth.pbobjc.m; sourceTree = "<group>"; };
 		22B4CA95205A427800CBD82F /* MarsIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B4CA98205A427800CBD82F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		22B4CA99205A427800CBD82F /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -230,6 +222,10 @@
 		220B1D43205A78DF00EE68BF /* Proto */ = {
 			isa = PBXGroup;
 			children = (
+				220B1E86205B837C00EE68BF /* Auth.pbobjc.h */,
+				220B1E87205B837D00EE68BF /* Auth.pbobjc.m */,
+				220B1E82205B761000EE68BF /* auth.proto */,
+				220B1E83205B761000EE68BF /* gen_proto.sh */,
 			);
 			path = Proto;
 			sourceTree = "<group>";
@@ -244,15 +240,6 @@
 		220B1D45205A78DF00EE68BF /* CustomeProto */ = {
 			isa = PBXGroup;
 			children = (
-				220B1D46205A78DF00EE68BF /* Chat.pbobjc.h */,
-				220B1D47205A78DF00EE68BF /* Chat.pbobjc.m */,
-				220B1D48205A78DF00EE68BF /* chat.proto */,
-				220B1D49205A78DF00EE68BF /* Main.pbobjc.h */,
-				220B1D4A205A78DF00EE68BF /* Main.pbobjc.m */,
-				220B1D4B205A78DF00EE68BF /* main.proto */,
-				220B1D4C205A78DF00EE68BF /* Messagepush.pbobjc.h */,
-				220B1D4D205A78DF00EE68BF /* Messagepush.pbobjc.m */,
-				220B1D4E205A78DF00EE68BF /* messagepush.proto */,
 				220B1D4F205A78DF00EE68BF /* Person.pbobjc.h */,
 				220B1D50205A78DF00EE68BF /* Person.pbobjc.m */,
 				220B1D51205A78DF00EE68BF /* Person.proto */,
@@ -523,12 +510,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				220B1DB3205A78DF00EE68BF /* chat.proto in Resources */,
 				220B1DB9205A78DF00EE68BF /* Person.proto in Resources */,
-				220B1DB5205A78DF00EE68BF /* main.proto in Resources */,
-				220B1DB7205A78DF00EE68BF /* messagepush.proto in Resources */,
+				220B1E84205B761000EE68BF /* auth.proto in Resources */,
 				22B4CAA5205A427800CBD82F /* LaunchScreen.storyboard in Resources */,
 				22B4CAA2205A427800CBD82F /* Assets.xcassets in Resources */,
+				220B1E85205B761000EE68BF /* gen_proto.sh in Resources */,
 				22B4CAA0205A427800CBD82F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,10 +539,8 @@
 				220B1DD2205A78DF00EE68BF /* Api.pbobjc.m in Sources */,
 				220B1DCA205A78DF00EE68BF /* GPBMessage.m in Sources */,
 				220B1DC7205A78DF00EE68BF /* GPBDictionary.m in Sources */,
-				220B1DB6205A78DF00EE68BF /* Messagepush.pbobjc.m in Sources */,
 				220B1DC6205A78DF00EE68BF /* GPBDescriptor.m in Sources */,
 				220B1DC9205A78DF00EE68BF /* GPBExtensionRegistry.m in Sources */,
-				220B1DB4205A78DF00EE68BF /* Main.pbobjc.m in Sources */,
 				220B1DD8205A78DF00EE68BF /* Timestamp.pbobjc.m in Sources */,
 				220B1DCF205A78DF00EE68BF /* GPBWellKnownTypes.m in Sources */,
 				220B1DC0205A78DF00EE68BF /* longlink_packer.cc in Sources */,
@@ -574,9 +558,9 @@
 				220B1DC8205A78DF00EE68BF /* GPBExtensionInternals.m in Sources */,
 				220B1DD1205A78DF00EE68BF /* Any.pbobjc.m in Sources */,
 				220B1DD4205A78DF00EE68BF /* Empty.pbobjc.m in Sources */,
-				220B1DB2205A78DF00EE68BF /* Chat.pbobjc.m in Sources */,
 				22B4CA9A205A427800CBD82F /* AppDelegate.mm in Sources */,
 				220B1DBF205A78DF00EE68BF /* LogUtil.m in Sources */,
+				220B1E88205B837D00EE68BF /* Auth.pbobjc.m in Sources */,
 				220B1DC3205A78DF00EE68BF /* GPBArray.m in Sources */,
 				220B1DDC205A78DF00EE68BF /* NetworkService.mm in Sources */,
 				220B1DBE205A78DF00EE68BF /* LogHelper.mm in Sources */,
