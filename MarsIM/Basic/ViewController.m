@@ -71,14 +71,12 @@
 - (BOOL)p_parseAuthStatus:(int32_t)status errCode:(int32_t)code andReason:(NSString *)reason
 {
     _authed = status == AuthResponse_Status_Ok;
-    //    XLOG_INFO(@"AuthResponse status=%@, errCode=%d, errMsg:%@", _authed?@"AuthResponse_Status_Ok":@"AuthResponse_Status_Err", code, reason);
-    NSLog(@"------------------认证成功");
     // 认证成功，进行拉取离线消息
     if (_authed) {
-        
+        NSLog(@"success------------------认证成功");
         
     } else {
-        
+        NSLog(@"failure------------------认证失败");
     }
     
     return _authed;
