@@ -7,13 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "C2CsendTask.h"
 
-@protocol GZIMLongLinkAuthDelegate <NSObject>
+@protocol LongLinkAuthDelegate <NSObject>
 @optional
 - (BOOL)longLinkAuthed;
 - (BOOL)longLinkAuthRequestWithUid:(NSString **)uid token:(NSString **)token domain:(int32_t *)domain;
 - (BOOL)longlinkAuthResponseWithStatus:(int32_t)status errCode:(int32_t)code errMsg:(NSString *)msg;
 @end
+
+
+@protocol LongLinkPushDelegate <NSObject>
+@optional
+- (void)longlinkPushMessage:(NSData*)pushData withCmdId:(int)cmdId;
+@end
+
+
 
 
 @interface LongLinkTool : NSObject
@@ -23,6 +32,9 @@
 - (void)createLongLinkWithAddress:(NSString *)addr ports:(NSArray *)ports clientVersion:(uint32_t)version;
 -(void)reportOnForegroud:(BOOL)foreground;
 - (void)destoryLongLink;
+
+
+- (void)addLongLinkPushObserver:(id<LongLinkPushDelegate>)observer withCmdId:(NSInteger)cmdId;
 
 
 /* 接受消息和cmdid */
@@ -40,9 +52,13 @@
 
 
 /* auth认证 */
-@property (nonatomic, weak) id<GZIMLongLinkAuthDelegate> authDelegate;
+@property (nonatomic, weak) id<LongLinkAuthDelegate> authDelegate;
 - (NSData*)authRequestData;
 /* 认证期间接受数据 */
 - (BOOL)authResponseData:(NSData*)responseData;
+
+
+
+- (uint32_t)startC2CSendWithFrom:(NSString *)from fromName:(NSString *)fromName to:(NSString *)to toDomain:(int32_t)toDomain content:(NSString *)content type:(int32_t)type onResult:(void (^)(BOOL, C2CSendResponse *))result;
 
 @end

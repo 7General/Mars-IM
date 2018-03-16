@@ -54,6 +54,10 @@
 		220B1E85205B761000EE68BF /* gen_proto.sh in Resources */ = {isa = PBXBuildFile; fileRef = 220B1E83205B761000EE68BF /* gen_proto.sh */; };
 		220B1E88205B837D00EE68BF /* Auth.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1E87205B837D00EE68BF /* Auth.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		220B1E8B205B910400EE68BF /* AuthTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1E8A205B910400EE68BF /* AuthTask.m */; };
+		220B1E8E205B9D6C00EE68BF /* C2Cpush.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1E8C205B9D6B00EE68BF /* C2Cpush.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		220B1E91205B9D7300EE68BF /* C2Csend.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1E90205B9D7300EE68BF /* C2Csend.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		220B1E94205B9D9600EE68BF /* C2CsendTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1E93205B9D9600EE68BF /* C2CsendTask.m */; };
+		220B1E97205B9DA800EE68BF /* C2CpushTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1E96205B9DA800EE68BF /* C2CpushTask.m */; };
 		22B4CA9A205A427800CBD82F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22B4CA99205A427800CBD82F /* AppDelegate.mm */; };
 		22B4CA9D205A427800CBD82F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B4CA9C205A427800CBD82F /* ViewController.m */; };
 		22B4CAA0205A427800CBD82F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B4CA9E205A427800CBD82F /* Main.storyboard */; };
@@ -162,6 +166,14 @@
 		220B1E87205B837D00EE68BF /* Auth.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Auth.pbobjc.m; sourceTree = "<group>"; };
 		220B1E89205B910400EE68BF /* AuthTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthTask.h; sourceTree = "<group>"; };
 		220B1E8A205B910400EE68BF /* AuthTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthTask.m; sourceTree = "<group>"; };
+		220B1E8C205B9D6B00EE68BF /* C2Cpush.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C2Cpush.pbobjc.m; sourceTree = "<group>"; };
+		220B1E8D205B9D6C00EE68BF /* C2Cpush.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C2Cpush.pbobjc.h; sourceTree = "<group>"; };
+		220B1E8F205B9D7300EE68BF /* C2Csend.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = C2Csend.pbobjc.h; sourceTree = "<group>"; };
+		220B1E90205B9D7300EE68BF /* C2Csend.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = C2Csend.pbobjc.m; sourceTree = "<group>"; };
+		220B1E92205B9D9600EE68BF /* C2CsendTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C2CsendTask.h; sourceTree = "<group>"; };
+		220B1E93205B9D9600EE68BF /* C2CsendTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2CsendTask.m; sourceTree = "<group>"; };
+		220B1E95205B9DA800EE68BF /* C2CpushTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C2CpushTask.h; sourceTree = "<group>"; };
+		220B1E96205B9DA800EE68BF /* C2CpushTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2CpushTask.m; sourceTree = "<group>"; };
 		22B4CA95205A427800CBD82F /* MarsIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B4CA98205A427800CBD82F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		22B4CA99205A427800CBD82F /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -225,6 +237,10 @@
 		220B1D43205A78DF00EE68BF /* Proto */ = {
 			isa = PBXGroup;
 			children = (
+				220B1E8F205B9D7300EE68BF /* C2Csend.pbobjc.h */,
+				220B1E90205B9D7300EE68BF /* C2Csend.pbobjc.m */,
+				220B1E8D205B9D6C00EE68BF /* C2Cpush.pbobjc.h */,
+				220B1E8C205B9D6B00EE68BF /* C2Cpush.pbobjc.m */,
 				220B1E86205B837C00EE68BF /* Auth.pbobjc.h */,
 				220B1E87205B837D00EE68BF /* Auth.pbobjc.m */,
 				220B1E82205B761000EE68BF /* auth.proto */,
@@ -238,6 +254,10 @@
 			children = (
 				220B1E89205B910400EE68BF /* AuthTask.h */,
 				220B1E8A205B910400EE68BF /* AuthTask.m */,
+				220B1E92205B9D9600EE68BF /* C2CsendTask.h */,
+				220B1E93205B9D9600EE68BF /* C2CsendTask.m */,
+				220B1E95205B9DA800EE68BF /* C2CpushTask.h */,
+				220B1E96205B9DA800EE68BF /* C2CpushTask.m */,
 			);
 			path = Task;
 			sourceTree = "<group>";
@@ -547,6 +567,7 @@
 				220B1DC7205A78DF00EE68BF /* GPBDictionary.m in Sources */,
 				220B1DC6205A78DF00EE68BF /* GPBDescriptor.m in Sources */,
 				220B1DC9205A78DF00EE68BF /* GPBExtensionRegistry.m in Sources */,
+				220B1E94205B9D9600EE68BF /* C2CsendTask.m in Sources */,
 				220B1DD8205A78DF00EE68BF /* Timestamp.pbobjc.m in Sources */,
 				220B1DCF205A78DF00EE68BF /* GPBWellKnownTypes.m in Sources */,
 				220B1DC0205A78DF00EE68BF /* longlink_packer.cc in Sources */,
@@ -557,6 +578,7 @@
 				220B1DD9205A78DF00EE68BF /* Type.pbobjc.m in Sources */,
 				22B4CA9D205A427800CBD82F /* ViewController.m in Sources */,
 				220B1DCE205A78DF00EE68BF /* GPBUtilities.m in Sources */,
+				220B1E97205B9DA800EE68BF /* C2CpushTask.m in Sources */,
 				220B1DC4205A78DF00EE68BF /* GPBCodedInputStream.m in Sources */,
 				220B1DCB205A78DF00EE68BF /* GPBRootObject.m in Sources */,
 				220B1DBA205A78DF00EE68BF /* app_callback.mm in Sources */,
@@ -565,8 +587,10 @@
 				220B1DD1205A78DF00EE68BF /* Any.pbobjc.m in Sources */,
 				220B1DD4205A78DF00EE68BF /* Empty.pbobjc.m in Sources */,
 				22B4CA9A205A427800CBD82F /* AppDelegate.mm in Sources */,
+				220B1E8E205B9D6C00EE68BF /* C2Cpush.pbobjc.m in Sources */,
 				220B1DBF205A78DF00EE68BF /* LogUtil.m in Sources */,
 				220B1E88205B837D00EE68BF /* Auth.pbobjc.m in Sources */,
+				220B1E91205B9D7300EE68BF /* C2Csend.pbobjc.m in Sources */,
 				220B1DC3205A78DF00EE68BF /* GPBArray.m in Sources */,
 				220B1DDC205A78DF00EE68BF /* NetworkService.mm in Sources */,
 				220B1DBE205A78DF00EE68BF /* LogHelper.mm in Sources */,

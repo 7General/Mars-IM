@@ -38,6 +38,8 @@ using namespace mars::stn;
 /* 发送的task */
 @property (nonatomic, strong) NSMutableDictionary * sendTaskDictionary;
 
+@property (nonatomic, strong) NSMapTable * pushObservers;
+
 @end
 
 @implementation LongLinkTool
@@ -56,11 +58,15 @@ using namespace mars::stn;
     self = [super init];
     if (self) {
         self.sendTaskDictionary = [NSMutableDictionary dictionary];
+        self.pushObservers = [NSMapTable strongToWeakObjectsMapTable];
     }
     return self;
 }
 
-
+-(void)dealloc {
+    self.pushObservers = nil;
+    self.sendTaskDictionary = nil;
+}
 
 // 创建长连接
 #pragma mark - Public
@@ -90,15 +96,60 @@ using namespace mars::stn;
 - (void)destoryLongLink {
     mars::baseevent::OnDestroy();
 }
-
-
-
-
-
-/* 接受消息和cmdid */
-- (void)OnPushWithCmd:(NSInteger)cid data:(NSData *)data {
-    
+/* 添加长连接 */
+- (void)addLongLinkPushObserver:(id<LongLinkPushDelegate>)observer withCmdId:(NSInteger)cmdId {
+    [self.pushObservers setObject:observer forKey:@(cmdId)];
 }
+/* 接受服务端推送的消息和cmdid */
+- (void)OnPushWithCmd:(NSInteger)cmdId data:(NSData *)data {
+    NSLog(@"-----------------OnPushWithCmd---------------------------");
+    id<LongLinkPushDelegate> pushObserver = [self.pushObservers objectForKey:@(cmdId)];
+    if (pushObserver && [pushObserver respondsToSelector:@selector(longlinkPushMessage:withCmdId:)]) {
+        [pushObserver longlinkPushMessage:data withCmdId:cmdId];
+    }
+}
+
+
+#pragma mark - 发送消息
+- (uint32_t)startC2CSendWithFrom:(NSString *)from fromName:(NSString *)fromName to:(NSString *)to toDomain:(int32_t)toDomain content:(NSString *)content type:(int32_t)type onResult:(void (^)(BOOL, C2CSendResponse *))result {
+    return [self startTask:[C2CsendTask taskWithFrom:from fromName:fromName to:to toDomain:toDomain content:content type:type onResult:result]];
+}
+
+- (uint32_t)nextTaskId
+{
+    uint32_t taskid = [[[NSUserDefaults standardUserDefaults] objectForKey:@"kGZIMLongLinkUniqueTaskId"] unsignedIntValue];
+    uint32_t nextTaskId = 1;
+    if (taskid > 0 || taskid < 0xF0000000) {
+        nextTaskId = taskid+1;
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:@(nextTaskId) forKey:@"kGZIMLongLinkUniqueTaskId"];
+    return nextTaskId;
+}
+- (uint32_t)startTask:(CGITask*)task
+{
+    uint32_t taskid = [self nextTaskId];
+    Task ctask(taskid);
+    
+    ctask.cmdid = task.cmdid;
+    ctask.channel_select = task.channel_select;
+    ctask.cgi = std::string(task.cgi.UTF8String);
+    ctask.shortlink_host_list.push_back(std::string(task.host.UTF8String));
+    
+    ctask.send_only = task.send_only;
+    ctask.need_authed = task.need_auth;
+    ctask.retry_count = task.retry_count;
+    
+    ctask.user_context = (__bridge void*)task;
+    
+    [_sendTaskDictionary setObject:task forKey:@(taskid)];
+    
+    mars::stn::StartTask(ctask);
+    return ctask.taskid;
+}
+
+
+
+
 
 /* 确认长连接状态 */
 - (void)OnConnectionStatusChange:(int)status longConnStatus:(int32_t)longConnStatus {
