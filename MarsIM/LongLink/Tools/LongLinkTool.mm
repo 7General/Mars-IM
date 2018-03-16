@@ -10,7 +10,7 @@
 
 #import <SystemConfiguration/SCNetworkReachability.h>
 
-#import "NetworkDelegate.h"
+
 #import "CGITask.h"
 
 #import "app_callback.h"
@@ -25,9 +25,8 @@
 #import "stnproto_logic.h"
 
 #import "NetworkStatus.h"
-#import "NetworkStatus.h"
 
-#import "Auth.pbobjc.h"
+#import "C2CpushTask.h"
 
 
 
@@ -53,8 +52,7 @@ using namespace mars::stn;
     return sharedSingleton;
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.sendTaskDictionary = [NSMutableDictionary dictionary];
@@ -70,8 +68,7 @@ using namespace mars::stn;
 
 // 创建长连接
 #pragma mark - Public
-- (void)createLongLinkWithAddress:(NSString *)addr ports:(NSArray *)ports clientVersion:(uint32_t)version
-{
+- (void)createLongLinkWithAddress:(NSString *)addr ports:(NSArray *)ports clientVersion:(uint32_t)version {
     mars::stn::SetCallback(mars::stn::StnCallBack::Instance());
     mars::app::SetCallback(mars::app::AppCallBack::Instance());
     
@@ -102,11 +99,25 @@ using namespace mars::stn;
 }
 /* 接受服务端推送的消息和cmdid */
 - (void)OnPushWithCmd:(NSInteger)cmdId data:(NSData *)data {
-    NSLog(@"-----------------OnPushWithCmd---------------------------");
     id<LongLinkPushDelegate> pushObserver = [self.pushObservers objectForKey:@(cmdId)];
     if (pushObserver && [pushObserver respondsToSelector:@selector(longlinkPushMessage:withCmdId:)]) {
         [pushObserver longlinkPushMessage:data withCmdId:cmdId];
     }
+}
+
+
+/* 接受到消息给服务端相应 */
+- (uint32_t)pushResponseWithCmdId:(int)cmdid messageId:(int64_t)msgid extra:(NSString *)extra {
+    uint32_t result = 0;
+    switch (cmdid) {
+        case 1007:
+            [self startTask:[C2CpushTask taskWithMessageId:msgid]];
+            break;
+            
+        default:
+            break;
+    }
+    return result;
 }
 
 
@@ -115,8 +126,7 @@ using namespace mars::stn;
     return [self startTask:[C2CsendTask taskWithFrom:from fromName:fromName to:to toDomain:toDomain content:content type:type onResult:result]];
 }
 
-- (uint32_t)nextTaskId
-{
+- (uint32_t)nextTaskId {
     uint32_t taskid = [[[NSUserDefaults standardUserDefaults] objectForKey:@"kGZIMLongLinkUniqueTaskId"] unsignedIntValue];
     uint32_t nextTaskId = 1;
     if (taskid > 0 || taskid < 0xF0000000) {
@@ -125,8 +135,7 @@ using namespace mars::stn;
     [[NSUserDefaults standardUserDefaults] setObject:@(nextTaskId) forKey:@"kGZIMLongLinkUniqueTaskId"];
     return nextTaskId;
 }
-- (uint32_t)startTask:(CGITask*)task
-{
+- (uint32_t)startTask:(CGITask*)task {
     uint32_t taskid = [self nextTaskId];
     Task ctask(taskid);
     
@@ -210,8 +219,7 @@ using namespace mars::stn;
 
 // auth认证开始
 /* 认证期间发送数据 */
-- (NSData*)authRequestData
-{
+- (NSData*)authRequestData {
     NSData* data = NULL;
     if (_authDelegate && [_authDelegate respondsToSelector:@selector(longLinkAuthRequestWithUid:token:domain:)]) {
         NSString *uid = nil;
@@ -230,8 +238,7 @@ using namespace mars::stn;
     return data;
 }
 /* 认证期间接受数据 */
-- (BOOL)authResponseData:(NSData*)responseData
-{
+- (BOOL)authResponseData:(NSData*)responseData {
     BOOL authed = NO;
     if (_authDelegate && [_authDelegate respondsToSelector:@selector(longlinkAuthResponseWithStatus:errCode:errMsg:)]) {
         AuthResponse *response = [AuthResponse parseFromData:responseData error:nil];
@@ -239,7 +246,10 @@ using namespace mars::stn;
     }
     return authed;
 }
-
+/* 主动确认auth认证或者从后台到前台在次主动认证auth */
+- (uint32_t)startAuthWithUserId:(NSString *)uid token:(NSString *)token domain:(int32_t)domain onResult:(void (^)(BOOL, AuthResponse *))result {
+    return [self startTask:[AuthTask taskWithUserId:uid token:token domain:domain onResult:result]];
+}
 
 
 

@@ -23,7 +23,7 @@
 
 #import <mars/stn/stn_logic.h>
 
-#import "NetworkService.h"
+
 
 namespace mars {
     namespace stn {

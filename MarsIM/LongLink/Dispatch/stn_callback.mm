@@ -18,7 +18,7 @@
 #import <mars/xlog/xlogger.h>
 #import <mars/stn/stn.h>
 
-#include "NetworkService.h"
+
 
 #import "LongLinkTool.h"
 

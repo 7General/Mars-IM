@@ -42,7 +42,6 @@
 		220B1DD9205A78DF00EE68BF /* Type.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1DA6205A78DF00EE68BF /* Type.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		220B1DDA205A78DF00EE68BF /* Wrappers.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1DA8205A78DF00EE68BF /* Wrappers.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		220B1DDB205A78DF00EE68BF /* LongLinkTool.mm in Sources */ = {isa = PBXBuildFile; fileRef = 220B1DAC205A78DF00EE68BF /* LongLinkTool.mm */; };
-		220B1DDC205A78DF00EE68BF /* NetworkService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 220B1DAF205A78DF00EE68BF /* NetworkService.mm */; };
 		220B1E79205A7BAD00EE68BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B4CB4C205A481600CBD82F /* Foundation.framework */; };
 		220B1E7A205A7BBE00EE68BF /* mars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220B1D64205A78DF00EE68BF /* mars.framework */; };
 		220B1E7B205A7BC800EE68BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B4CB54205A485B00CBD82F /* UIKit.framework */; };
@@ -155,11 +154,6 @@
 		220B1DAA205A78DF00EE68BF /* CommandID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandID.h; sourceTree = "<group>"; };
 		220B1DAB205A78DF00EE68BF /* LongLinkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongLinkTool.h; sourceTree = "<group>"; };
 		220B1DAC205A78DF00EE68BF /* LongLinkTool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LongLinkTool.mm; sourceTree = "<group>"; };
-		220B1DAD205A78DF00EE68BF /* NetworkDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkDelegate.h; sourceTree = "<group>"; };
-		220B1DAE205A78DF00EE68BF /* NetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
-		220B1DAF205A78DF00EE68BF /* NetworkService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NetworkService.mm; sourceTree = "<group>"; };
-		220B1DB0205A78DF00EE68BF /* PushNotifyDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotifyDelegate.h; sourceTree = "<group>"; };
-		220B1DB1205A78DF00EE68BF /* UINotifyDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINotifyDelegate.h; sourceTree = "<group>"; };
 		220B1E82205B761000EE68BF /* auth.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = auth.proto; sourceTree = "<group>"; };
 		220B1E83205B761000EE68BF /* gen_proto.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = gen_proto.sh; sourceTree = "<group>"; };
 		220B1E86205B837C00EE68BF /* Auth.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Auth.pbobjc.h; sourceTree = "<group>"; };
@@ -410,11 +404,6 @@
 				220B1DAA205A78DF00EE68BF /* CommandID.h */,
 				220B1DAB205A78DF00EE68BF /* LongLinkTool.h */,
 				220B1DAC205A78DF00EE68BF /* LongLinkTool.mm */,
-				220B1DAD205A78DF00EE68BF /* NetworkDelegate.h */,
-				220B1DAE205A78DF00EE68BF /* NetworkService.h */,
-				220B1DAF205A78DF00EE68BF /* NetworkService.mm */,
-				220B1DB0205A78DF00EE68BF /* PushNotifyDelegate.h */,
-				220B1DB1205A78DF00EE68BF /* UINotifyDelegate.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -592,7 +581,6 @@
 				220B1E88205B837D00EE68BF /* Auth.pbobjc.m in Sources */,
 				220B1E91205B9D7300EE68BF /* C2Csend.pbobjc.m in Sources */,
 				220B1DC3205A78DF00EE68BF /* GPBArray.m in Sources */,
-				220B1DDC205A78DF00EE68BF /* NetworkService.mm in Sources */,
 				220B1DBE205A78DF00EE68BF /* LogHelper.mm in Sources */,
 				220B1DBD205A78DF00EE68BF /* stn_callback.mm in Sources */,
 			);
