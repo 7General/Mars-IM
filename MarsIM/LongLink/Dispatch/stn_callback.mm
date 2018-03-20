@@ -39,7 +39,7 @@ void StnCallBack::Release() {
     delete instance_;
     instance_ = NULL;
 }
-        
+        // auth认证完成
 bool StnCallBack::MakesureAuthed() {
     return true;
 }

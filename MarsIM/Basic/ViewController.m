@@ -57,8 +57,8 @@
 - (BOOL)longLinkAuthRequestWithUid:(NSString *__autoreleasing *)uid token:(NSString *__autoreleasing *)token domain:(int32_t *)domain
 {
     _authed = NO;
-    *uid = @"";
-    *token = @"";
+    *uid = @"222594";
+    *token = @"905fcb6c4272d4d07af5dd9b1ff132c0";
     *domain = 0;
     return YES;
 }
