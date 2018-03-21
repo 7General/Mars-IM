@@ -38,7 +38,7 @@ static BOOL __hasOpen = NO;
     
     xlogger_SetLevel(kLevelDebug);
     appender_set_console_log(true);
-    appender_open(kAppednerAsync, [path UTF8String], "LONGLINK", "");
+    appender_open(kAppednerAsync, [path UTF8String], "LONGLINK-MARSIM", "");
     
     __hasOpen = YES;
 }
@@ -49,7 +49,7 @@ static BOOL __hasOpen = NO;
 }
 
 
-static NSString *__model = @"LONGLINK";
+static NSString *__model = @"LONGLINK-MARSIM";
 + (void)setModelName:(NSString *)model {
     __model = model;
 }

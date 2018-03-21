@@ -42,18 +42,18 @@ bool StnCallBack::MakesureAuthed() {
    return [[LongLinkTool sharedLongLink] isAuthed];
 }
 
-
+// 流量统计
 void StnCallBack::TrafficData(ssize_t _send, ssize_t _recv) {
     xdebug2(TSF"send:%_, recv:%_", _send, _recv);
 }
-        
+        // 底层询问上册该host对应的ip列表
 std::vector<std::string> StnCallBack::OnNewDns(const std::string& _host) {
     std::vector<std::string> vector;
 
     return vector;
 }
         
-// 接受消息
+// 接受消息（网络层收到push消息回调）
 void StnCallBack::OnPush(uint64_t _channel_id, uint32_t _cmdid, uint32_t _taskid, const AutoBuffer& _body, const AutoBuffer& _extend) {
     if (_body.Length() > 0) {
         NSData* recvData = [NSData dataWithBytes:(const void *) _body.Ptr() length:_body.Length()];
@@ -61,7 +61,7 @@ void StnCallBack::OnPush(uint64_t _channel_id, uint32_t _cmdid, uint32_t _taskid
     }
     
 }
-
+// 底层获取task要发送的数据
 bool StnCallBack::Req2Buf(uint32_t _taskid, void* const _user_context, AutoBuffer& _outbuffer, AutoBuffer& _extend, int& _error_code, const int _channel_select) {
     /* 发送时的requestData */
     NSData * requestData = [[LongLinkTool sharedLongLink] Request2BufferWithTaskID:_taskid userContext:_user_context];
@@ -72,7 +72,7 @@ bool StnCallBack::Req2Buf(uint32_t _taskid, void* const _user_context, AutoBuffe
     _outbuffer.Write(requestData.bytes,requestData.length);
     return requestData.length > 0;
 }
-
+// 底层回包返回给上层解析
 int StnCallBack::Buf2Resp(uint32_t _taskid, void* const _user_context, const AutoBuffer& _inbuffer, const AutoBuffer& _extend, int& _error_code, const int _channel_select) {
     
     int handle_type = mars::stn::kTaskFailHandleNormal;
@@ -86,13 +86,13 @@ int StnCallBack::Buf2Resp(uint32_t _taskid, void* const _user_context, const Aut
     
     return handle_type;
 }
-
+// 任务执行结束
 int StnCallBack::OnTaskEnd(uint32_t _taskid, void* const _user_context, int _error_type, int _error_code) {
     /* 接受结束的数据 */
     return [[LongLinkTool sharedLongLink] OnTaskEndWithTaskID:_taskid userContext:_user_context errType:_error_type errCode:_error_code];
 }
         
-// 向服务器发送长连接连接状态确认信息
+// 上报网络连接状态
 void StnCallBack::ReportConnectStatus(int _status, int longlink_status) {
     [[LongLinkTool sharedLongLink] OnConnectionStatusChange:_status longConnStatus:longlink_status];
     switch (longlink_status) {
@@ -112,6 +112,8 @@ void StnCallBack::ReportConnectStatus(int _status, int longlink_status) {
     
 }
 
+        
+        // 长连信令校验 ECHECK_NOW = 0, ECHECK_NEXT = 1, ECHECK_NEVER = 2
 // synccheck：长链成功后由网络组件触发
 // 需要组件组包，发送一个req过去，网络成功会有resp，但没有taskend，处理事务时要注意网络时序
 // 不需组件组包，使用长链做一个sync，不用重试
@@ -126,7 +128,7 @@ int  StnCallBack::GetLonglinkIdentifyCheckBuffer(AutoBuffer& _identify_buffer, A
     }
     return IdentifyMode::kCheckNever;
 }
-
+// 长连接信令校验回包
 bool StnCallBack::OnLonglinkIdentifyResponse(const AutoBuffer& _response_buffer, const AutoBuffer& _identify_buffer_hash) {
     NSData* responseData = [NSData dataWithBytes:(const void *) _response_buffer.Ptr() length:_response_buffer.Length()];
     return [[LongLinkTool sharedLongLink] authResponseData:responseData];
