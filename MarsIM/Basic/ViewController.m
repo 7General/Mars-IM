@@ -58,8 +58,7 @@
     return YES;
 }
 
-- (BOOL)longLinkAuthRequestWithUid:(NSString *__autoreleasing *)uid token:(NSString *__autoreleasing *)token domain:(int32_t *)domain
-{
+- (BOOL)longLinkAuthRequestWithUid:(NSString *__autoreleasing *)uid token:(NSString *__autoreleasing *)token domain:(int32_t *)domain {
     _authed = NO;
     *uid = @"222594";
     *token = @"905fcb6c4272d4d07af5dd9b1ff132c0";
@@ -67,13 +66,11 @@
     return YES;
 }
 
-- (BOOL)longlinkAuthResponseWithStatus:(int32_t)status errCode:(int32_t)code errMsg:(NSString *)msg
-{
+- (BOOL)longlinkAuthResponseWithStatus:(int32_t)status errCode:(int32_t)code errMsg:(NSString *)msg {
     return [self p_parseAuthStatus:status errCode:code andReason:msg];
 }
 
-- (BOOL)p_parseAuthStatus:(int32_t)status errCode:(int32_t)code andReason:(NSString *)reason
-{
+- (BOOL)p_parseAuthStatus:(int32_t)status errCode:(int32_t)code andReason:(NSString *)reason {
     _authed = status == AuthResponse_Status_Ok;
     // 认证成功，进行拉取离线消息
     if (_authed) {
