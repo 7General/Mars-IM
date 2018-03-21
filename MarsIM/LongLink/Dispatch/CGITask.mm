@@ -24,7 +24,6 @@
 
 - (id)init {
     if (self = [super init]) {
-//        self.channel_select = ChannelType_All;
         self.send_only = NO;
         self.need_auth = YES;
         self.retry_count = 3;
