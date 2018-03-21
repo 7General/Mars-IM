@@ -24,6 +24,14 @@
 
 @interface LogHelper : NSObject
 
++ (void)openXLogWithPath:(NSString *)path logLever:(TLogLevel)level;
+
++ (void)closeXLog;
++ (BOOL)hasOpenXLog;
+
+
++ (void)logWithLevel:(TLogLevel)logLevel fileName:(const char*)fileName lineNumber:(int)lineNumber funcName:(const char*)funcName message:(NSString *)message;
+
 + (void)logWithLevel:(TLogLevel)logLevel moduleName:(const char*)moduleName fileName:(const char*)fileName lineNumber:(int)lineNumber funcName:(const char*)funcName message:(NSString *)message;
 + (void)logWithLevel:(TLogLevel)logLevel moduleName:(const char*)moduleName fileName:(const char*)fileName lineNumber:(int)lineNumber funcName:(const char*)funcName format:(NSString *)format, ...;
 
@@ -31,10 +39,29 @@
 
 @end
 
-#define LogInternal(level, module, file, line, func, prefix, format, ...) \
+#define LogInternal(level, file, line, func, prefix, format, ...) \
 do { \
-    if ([LogHelper shouldLog:level]) { \
+    if ([LogHelper shouldLog:level] && [LogHelper hasOpenXLog]) { \
         NSString *aMessage = [NSString stringWithFormat:@"%@%@", prefix, [NSString stringWithFormat:format, ##__VA_ARGS__, nil]]; \
-        [LogHelper logWithLevel:level moduleName:module fileName:file lineNumber:line funcName:func message:aMessage]; \
+        [LogHelper logWithLevel:level fileName:file lineNumber:line funcName:func message:aMessage]; \
     } \
 } while(0)
+
+
+
+#define __FILENAME__ (strrchr(__FILE__,'/')+1)
+
+/**
+ *  Module Logging
+ */
+#define LOG_ERROR(format, ...) LogInternal(kLevelError, __FILENAME__, __LINE__, __FUNCTION__, @"Error:", format, ##__VA_ARGS__)
+#define LOG_WARNING(format, ...) LogInternal(kLevelWarn, __FILENAME__, __LINE__, __FUNCTION__, @"Warning:", format, ##__VA_ARGS__)
+#define XLOG_INFO(format, ...) LogInternal(kLevelInfo, __FILENAME__, __LINE__, __FUNCTION__, @"Info:", format, ##__VA_ARGS__)
+#define LOG_DEBUG(format, ...) LogInternal(kLevelDebug, __FILENAME__, __LINE__, __FUNCTION__, @"Debug:", format, ##__VA_ARGS__)
+
+
+
+
+
+
+

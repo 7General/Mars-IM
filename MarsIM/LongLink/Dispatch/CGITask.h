@@ -19,6 +19,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LogHelper.h"
 
 typedef enum : int32_t {
     ChannelType_ShortConn = 1,

@@ -43,12 +43,12 @@
 - (void)onDecodeData:(NSData *)responseData
 {
     self.response = [C2CSendResponse parseFromData:responseData error:nil];
-//    XLOG_INFO(@"C2CSendTask onDecodeData: request = %@, response = %@", self.request.description, self.response.description);
+    XLOG_INFO(@"C2CSendTask onDecodeData: request = %@, response = %@", self.request.description, self.response.description);
 }
 
 - (void)onTaskEnd:(int)errType code:(int)errCode
 {
-//    XLOG_INFO(@"C2CSendTask onTaskEnd: request = %@, errType = %d, errCode = %d", self.request.description, errType, errCode);
+    XLOG_INFO(@"C2CSendTask onTaskEnd: request = %@, errType = %d, errCode = %d", self.request.description, errType, errCode);
     if (self.onResult) {
         self.onResult(errType==0, self.response);
     }

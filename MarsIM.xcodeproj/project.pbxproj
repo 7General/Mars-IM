@@ -14,7 +14,6 @@
 		220B1DBC205A78DF00EE68BF /* NetworkStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1D58205A78DF00EE68BF /* NetworkStatus.m */; };
 		220B1DBD205A78DF00EE68BF /* stn_callback.mm in Sources */ = {isa = PBXBuildFile; fileRef = 220B1D5A205A78DF00EE68BF /* stn_callback.mm */; };
 		220B1DBE205A78DF00EE68BF /* LogHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 220B1D5D205A78DF00EE68BF /* LogHelper.mm */; };
-		220B1DBF205A78DF00EE68BF /* LogUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1D5F205A78DF00EE68BF /* LogUtil.m */; };
 		220B1DC0205A78DF00EE68BF /* longlink_packer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 220B1D62205A78DF00EE68BF /* longlink_packer.cc */; };
 		220B1DC2205A78DF00EE68BF /* shortlink_packer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 220B1D65205A78DF00EE68BF /* shortlink_packer.cc */; };
 		220B1DC3205A78DF00EE68BF /* GPBArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 220B1D6B205A78DF00EE68BF /* GPBArray.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -61,7 +60,7 @@
 		22B4CA9D205A427800CBD82F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B4CA9C205A427800CBD82F /* ViewController.m */; };
 		22B4CAA2205A427800CBD82F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B4CAA1205A427800CBD82F /* Assets.xcassets */; };
 		22B4CAA5205A427800CBD82F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B4CAA3205A427800CBD82F /* LaunchScreen.storyboard */; };
-		22B4CAA8205A427800CBD82F /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22B4CAA7205A427800CBD82F /* main.mm */; };
+		22B4CAA8205A427800CBD82F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B4CAA7205A427800CBD82F /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,8 +79,6 @@
 		220B1D5A205A78DF00EE68BF /* stn_callback.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = stn_callback.mm; sourceTree = "<group>"; };
 		220B1D5C205A78DF00EE68BF /* LogHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogHelper.h; sourceTree = "<group>"; };
 		220B1D5D205A78DF00EE68BF /* LogHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LogHelper.mm; sourceTree = "<group>"; };
-		220B1D5E205A78DF00EE68BF /* LogUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogUtil.h; sourceTree = "<group>"; };
-		220B1D5F205A78DF00EE68BF /* LogUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogUtil.m; sourceTree = "<group>"; };
 		220B1D62205A78DF00EE68BF /* longlink_packer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = longlink_packer.cc; sourceTree = "<group>"; };
 		220B1D63205A78DF00EE68BF /* longlink_packer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = longlink_packer.h; sourceTree = "<group>"; };
 		220B1D64205A78DF00EE68BF /* mars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mars.framework; sourceTree = "<group>"; };
@@ -150,7 +147,6 @@
 		220B1DA6205A78DF00EE68BF /* Type.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type.pbobjc.m; sourceTree = "<group>"; };
 		220B1DA7205A78DF00EE68BF /* Wrappers.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wrappers.pbobjc.h; sourceTree = "<group>"; };
 		220B1DA8205A78DF00EE68BF /* Wrappers.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wrappers.pbobjc.m; sourceTree = "<group>"; };
-		220B1DAA205A78DF00EE68BF /* CommandID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandID.h; sourceTree = "<group>"; };
 		220B1DAB205A78DF00EE68BF /* LongLinkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongLinkTool.h; sourceTree = "<group>"; };
 		220B1DAC205A78DF00EE68BF /* LongLinkTool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LongLinkTool.mm; sourceTree = "<group>"; };
 		220B1E82205B761000EE68BF /* auth.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = auth.proto; sourceTree = "<group>"; };
@@ -175,7 +171,7 @@
 		22B4CAA1205A427800CBD82F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22B4CAA4205A427800CBD82F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22B4CAA6205A427800CBD82F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22B4CAA7205A427800CBD82F /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		22B4CAA7205A427800CBD82F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22B4CB4C205A481600CBD82F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22B4CB4E205A482200CBD82F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		22B4CB50205A482B00CBD82F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -284,8 +280,6 @@
 			children = (
 				220B1D5C205A78DF00EE68BF /* LogHelper.h */,
 				220B1D5D205A78DF00EE68BF /* LogHelper.mm */,
-				220B1D5E205A78DF00EE68BF /* LogUtil.h */,
-				220B1D5F205A78DF00EE68BF /* LogUtil.m */,
 			);
 			path = LogComponent;
 			sourceTree = "<group>";
@@ -399,7 +393,6 @@
 		220B1DA9205A78DF00EE68BF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				220B1DAA205A78DF00EE68BF /* CommandID.h */,
 				220B1DAB205A78DF00EE68BF /* LongLinkTool.h */,
 				220B1DAC205A78DF00EE68BF /* LongLinkTool.mm */,
 			);
@@ -431,7 +424,7 @@
 				22B4CAA1205A427800CBD82F /* Assets.xcassets */,
 				22B4CAA3205A427800CBD82F /* LaunchScreen.storyboard */,
 				22B4CAA6205A427800CBD82F /* Info.plist */,
-				22B4CAA7205A427800CBD82F /* main.mm */,
+				22B4CAA7205A427800CBD82F /* main.m */,
 			);
 			path = MarsIM;
 			sourceTree = "<group>";
@@ -567,13 +560,12 @@
 				220B1DC4205A78DF00EE68BF /* GPBCodedInputStream.m in Sources */,
 				220B1DCB205A78DF00EE68BF /* GPBRootObject.m in Sources */,
 				220B1DBA205A78DF00EE68BF /* app_callback.mm in Sources */,
-				22B4CAA8205A427800CBD82F /* main.mm in Sources */,
+				22B4CAA8205A427800CBD82F /* main.m in Sources */,
 				220B1DC8205A78DF00EE68BF /* GPBExtensionInternals.m in Sources */,
 				220B1DD1205A78DF00EE68BF /* Any.pbobjc.m in Sources */,
 				220B1DD4205A78DF00EE68BF /* Empty.pbobjc.m in Sources */,
 				22B4CA9A205A427800CBD82F /* AppDelegate.mm in Sources */,
 				220B1E8E205B9D6C00EE68BF /* C2Cpush.pbobjc.m in Sources */,
-				220B1DBF205A78DF00EE68BF /* LogUtil.m in Sources */,
 				220B1E88205B837D00EE68BF /* Auth.pbobjc.m in Sources */,
 				220B1E91205B9D7300EE68BF /* C2Csend.pbobjc.m in Sources */,
 				220B1DC3205A78DF00EE68BF /* GPBArray.m in Sources */,
