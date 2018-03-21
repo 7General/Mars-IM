@@ -11,8 +11,6 @@
 #import "LongLinkTool.h"
 #import "LogHelper.h"
 
-#import <mars/xlog/appender.h>
-
 
 @interface AppDelegate ()
 

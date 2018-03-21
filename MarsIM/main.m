@@ -10,8 +10,6 @@
 #import "AppDelegate.h"
 #import "LogHelper.h"
 
-
-
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         
@@ -22,7 +20,6 @@ int main(int argc, char * argv[]) {
 #else
         [LogHelper openXLogWithPath:logPath logLever:kLevelInfo];
 #endif
-        
         
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
