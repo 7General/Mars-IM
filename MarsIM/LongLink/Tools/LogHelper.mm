@@ -19,12 +19,8 @@
 //
 
 #import "LogHelper.h"
-#import <mars/xlog/xlogger.h>
-
 #import <sys/xattr.h>
-
-#import <mars/xlog/xloggerbase.h>
-
+#import <mars/xlog/xlogger.h>
 #import <mars/xlog/appender.h>
 
 
