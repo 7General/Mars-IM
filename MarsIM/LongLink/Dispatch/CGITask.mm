@@ -24,9 +24,9 @@
 
 - (id)init {
     if (self = [super init]) {
-        self.channel_select = ChannelType_All;
-        self.send_only = false;
-        self.need_auth = false;
+//        self.channel_select = ChannelType_All;
+        self.send_only = NO;
+        self.need_auth = YES;
         self.retry_count = 3;
     }
     
@@ -39,7 +39,7 @@
 
 - (id)initAll:(ChannelType)ChannelType AndCmdId:(uint32_t)cmdId AndCGIUri:(NSString*)cgiUri AndHost:(NSString*)host {
     
-    if (self = [super init]) {
+    if (self = [self init]) {
         self.channel_select = ChannelType;
         self.cmdid = cmdId;
         self.cgi = cgiUri;

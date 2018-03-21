@@ -218,6 +218,15 @@ using namespace mars::stn;
 
 
 // auth认证开始
+- (BOOL)isAuthed {
+    BOOL authed = NO;
+    if (self.authDelegate && [self.authDelegate respondsToSelector:@selector(longLinkAuthed)]) {
+        authed = [self.authDelegate longLinkAuthed];
+    }
+    return authed;
+}
+
+
 /* 认证期间发送数据 */
 - (NSData*)authRequestData {
     NSData* data = NULL;

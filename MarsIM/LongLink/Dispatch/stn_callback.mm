@@ -18,8 +18,6 @@
 #import <mars/xlog/xlogger.h>
 #import <mars/stn/stn.h>
 
-
-
 #import "LongLinkTool.h"
 
 namespace mars {
@@ -39,9 +37,9 @@ void StnCallBack::Release() {
     delete instance_;
     instance_ = NULL;
 }
-        // auth认证完成
+// 是否auth认证完成过,需要设置CGITask的need_auth设置为true
 bool StnCallBack::MakesureAuthed() {
-    return true;
+   return [[LongLinkTool sharedLongLink] isAuthed];
 }
 
 
@@ -131,8 +129,8 @@ int  StnCallBack::GetLonglinkIdentifyCheckBuffer(AutoBuffer& _identify_buffer, A
 
 bool StnCallBack::OnLonglinkIdentifyResponse(const AutoBuffer& _response_buffer, const AutoBuffer& _identify_buffer_hash) {
     NSData* responseData = [NSData dataWithBytes:(const void *) _response_buffer.Ptr() length:_response_buffer.Length()];
-    [[LongLinkTool sharedLongLink] authResponseData:responseData];
-    return false;
+    return [[LongLinkTool sharedLongLink] authResponseData:responseData];
+    
 }
 //
 void StnCallBack::RequestSync() {

@@ -54,6 +54,10 @@
 
 
 #pragma mark authDelegate
+-(BOOL)longLinkAuthed {
+    return YES;
+}
+
 - (BOOL)longLinkAuthRequestWithUid:(NSString *__autoreleasing *)uid token:(NSString *__autoreleasing *)token domain:(int32_t *)domain
 {
     _authed = NO;

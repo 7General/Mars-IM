@@ -58,11 +58,14 @@
 
 /* auth认证 */
 @property (nonatomic, weak) id<LongLinkAuthDelegate> authDelegate;
+
+- (BOOL)isAuthed;
 - (NSData*)authRequestData;
 /* 认证期间接受数据 */
 - (BOOL)authResponseData:(NSData*)responseData;
 /* 主动确认auth认证或者从后台到前台在次主动认证auth */
 - (uint32_t)startAuthWithUserId:(NSString *)uid token:(NSString *)token domain:(int32_t)domain onResult:(void (^)(BOOL, AuthResponse *))result;
+
 
 
 /* 个人对个人 */
