@@ -28,8 +28,6 @@
 
 #import "C2CpushTask.h"
 
-
-
 using namespace mars::stn;
 
 
@@ -162,27 +160,27 @@ using namespace mars::stn;
 
 /* 确认长连接状态 */
 - (void)OnConnectionStatusChange:(int)status longConnStatus:(int32_t)longConnStatus {
-//    GZIMLongLinkStatus llStatus;
-//    switch (longConnStatus) {
-//        case 4:
-//            llStatus = GZIMLongLinkStatusConnected;
-//            break;
-//        case 3:
-//            llStatus = GZIMLongLinkStatusConnecting;
-//            break;
-//        default:
-//            llStatus = GZIMLongLinkStatusDisconnected;
-//            break;
-//    }
-//    if (_connectDelegate && [_connectDelegate respondsToSelector:@selector(longlinkContectStatusDidChanged:)]) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [_connectDelegate longlinkContectStatusDidChanged:llStatus];
-//        });
-//    } else {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [[NSNotificationCenter defaultCenter] postNotificationName:kGZIMLongLinkStatusObserverName object:nil userInfo:@{kGZIMLongLinkStatus:@(llStatus)}];
-//        });
-//    }
+    LongLinkStatus llStatus;
+    switch (longConnStatus) {
+        case 4:
+            llStatus = LongLinkStatusConnected;
+            break;
+        case 3:
+            llStatus = LongLinkStatusConnecting;
+            break;
+        default:
+            llStatus = LongLinkStatusDisconnected;
+            break;
+    }
+    if (_connectDelegate && [_connectDelegate respondsToSelector:@selector(longlinkContectStatusDidChanged:)]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_connectDelegate longlinkContectStatusDidChanged:llStatus];
+        });
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            [[NSNotificationCenter defaultCenter] postNotificationName:kGZIMLongLinkStatusObserverName object:nil userInfo:@{LongLinkStatus:@(llStatus)}];
+        });
+    }
 }
 
 

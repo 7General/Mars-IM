@@ -11,7 +11,7 @@
 #import "Auth.pbobjc.h"
 #import "C2Cpush.pbobjc.h"
 
-@interface ViewController ()<LongLinkAuthDelegate,LongLinkPushDelegate>
+@interface ViewController ()<LongLinkAuthDelegate,LongLinkPushDelegate,LongLinkContectDelegate>
 @property (nonatomic) BOOL authed;
 
 @property (nonatomic, strong) UITextField * sendText;
@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[LongLinkTool sharedLongLink] setAuthDelegate:self];
+    [[LongLinkTool sharedLongLink] setConnectDelegate:self];
     
     [[LongLinkTool sharedLongLink] addLongLinkPushObserver:self withCmdId:(1007)];
     
@@ -50,9 +51,15 @@
 -(void)longlinkPushMessage:(NSData *)pushData withCmdId:(int)cmdId {
     C2CPushRequest *request = [C2CPushRequest parseFromData:pushData error:nil];
     NSLog(@"----接受内容为:%@",request.content);
+    if (cmdId == 1003) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"警告" message:@"被踢下线" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 
-
+- (void)longlinkContectStatusDidChanged:(LongLinkStatus)status {
+    NSLog(@"\n\n\n------\n\n\n");
+}
 #pragma mark authDelegate
 -(BOOL)longLinkAuthed {
     return YES;
@@ -61,7 +68,7 @@
 - (BOOL)longLinkAuthRequestWithUid:(NSString *__autoreleasing *)uid token:(NSString *__autoreleasing *)token domain:(int32_t *)domain {
     _authed = NO;
     *uid = @"222594";
-    *token = @"905fcb6c4272d4d07af5dd9b1ff132c0";
+    *token = @"d625bd5cf7610d5cf08a18d48b5b1414";
     *domain = 0;
     return YES;
 }

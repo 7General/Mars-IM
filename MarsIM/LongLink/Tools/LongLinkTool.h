@@ -10,7 +10,13 @@
 #import "C2CsendTask.h"
 #import "AuthTask.h"
 
+typedef NS_ENUM(NSUInteger, LongLinkStatus) {
+    LongLinkStatusConnected,
+    LongLinkStatusConnecting,
+    LongLinkStatusDisconnected,
+};
 
+/* auth认证 */
 @protocol LongLinkAuthDelegate <NSObject>
 @optional
 - (BOOL)longLinkAuthed;
@@ -18,12 +24,15 @@
 - (BOOL)longlinkAuthResponseWithStatus:(int32_t)status errCode:(int32_t)code errMsg:(NSString *)msg;
 @end
 
-
+/* 服务端消息推送 */
 @protocol LongLinkPushDelegate <NSObject>
 @optional
 - (void)longlinkPushMessage:(NSData*)pushData withCmdId:(int)cmdId;
 @end
-
+/* 连接状态 */
+@protocol LongLinkContectDelegate <NSObject>
+@optional - (void)longlinkContectStatusDidChanged:(LongLinkStatus)status;
+@end
 
 
 
@@ -58,6 +67,7 @@
 
 /* auth认证 */
 @property (nonatomic, weak) id<LongLinkAuthDelegate> authDelegate;
+@property (nonatomic, weak) id<LongLinkContectDelegate> connectDelegate;
 
 - (BOOL)isAuthed;
 - (NSData*)authRequestData;

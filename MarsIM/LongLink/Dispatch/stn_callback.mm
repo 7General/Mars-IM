@@ -46,7 +46,7 @@ bool StnCallBack::MakesureAuthed() {
 void StnCallBack::TrafficData(ssize_t _send, ssize_t _recv) {
     xdebug2(TSF"send:%_, recv:%_", _send, _recv);
 }
-        // 底层询问上册该host对应的ip列表
+        // 底层询问上层该host对应的ip列表
 std::vector<std::string> StnCallBack::OnNewDns(const std::string& _host) {
     std::vector<std::string> vector;
 
