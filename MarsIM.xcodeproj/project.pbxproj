@@ -61,6 +61,19 @@
 		22B4CAA8205A427800CBD82F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B4CAA7205A427800CBD82F /* main.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		22A251472064B2E400155493 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		220B1C94205A75E500EE68BF /* mars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mars.framework; path = MarsIM/LongLink/Mars/Source/mars.framework; sourceTree = "<group>"; };
 		220B1C96205A762400EE68BF /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
@@ -442,6 +455,7 @@
 				22B4CA91205A427800CBD82F /* Sources */,
 				22B4CA92205A427800CBD82F /* Frameworks */,
 				22B4CA93205A427800CBD82F /* Resources */,
+				22A251472064B2E400155493 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
