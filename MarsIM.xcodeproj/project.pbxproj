@@ -185,8 +185,6 @@
 		22B4CB50205A482B00CBD82F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		22B4CB52205A484100CBD82F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		22B4CB54205A485B00CBD82F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		22B4CB56205A488800CBD82F /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		22B4CB58205A489800CBD82F /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,8 +432,6 @@
 			children = (
 				220B1C96205A762400EE68BF /* libresolv.9.tbd */,
 				220B1C94205A75E500EE68BF /* mars.framework */,
-				22B4CB58205A489800CBD82F /* libresolv.tbd */,
-				22B4CB56205A488800CBD82F /* libsqlite3.tbd */,
 				22B4CB54205A485B00CBD82F /* UIKit.framework */,
 				22B4CB52205A484100CBD82F /* CoreTelephony.framework */,
 				22B4CB50205A482B00CBD82F /* SystemConfiguration.framework */,

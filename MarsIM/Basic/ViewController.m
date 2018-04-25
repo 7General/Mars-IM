@@ -37,6 +37,10 @@
     [sendButton addTarget:self action:@selector(sendClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:sendButton];
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        self.authed = NO;
+    });
+    
 }
 
 -(void)sendClick {
@@ -62,13 +66,13 @@
 }
 #pragma mark authDelegate
 -(BOOL)longLinkAuthed {
-    return YES;
+    return _authed;
 }
 
 - (BOOL)longLinkAuthRequestWithUid:(NSString *__autoreleasing *)uid token:(NSString *__autoreleasing *)token domain:(int32_t *)domain {
     _authed = NO;
     *uid = @"222594";
-    *token = @"d625bd5cf7610d5cf08a18d48b5b1414";
+    *token = @"4304eb26404a9283a9b419701efdc280";
     *domain = 0;
     return YES;
 }
