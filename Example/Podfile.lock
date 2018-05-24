@@ -1,5 +1,5 @@
 PODS:
-  - MarsSDK (1.0.3):
+  - MarsSDK (1.0.4):
     - Protobuf
   - Protobuf (3.5.0)
 
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MarsSDK: 52e132afa853245d5f7289ccfc934ea0b6d32f3f
+  MarsSDK: 2b3c0f516f73746c295e56dda536bbb3ac54ebf6
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
 
 PODFILE CHECKSUM: ea7aa59f785276dd16cbad05dc7e27f10b2bf257

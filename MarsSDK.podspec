@@ -8,14 +8,14 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MarsSDK'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'A short description of MarsSDK.'
 
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/wanghuizhou/MarsSDK'
+  s.homepage         = 'https://github.com/7General/Mars-IM'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wanghuizhou' => 'wanghuizhou@guazi.com' }
   s.source           = { :git => 'https://github.com/7General/Mars-IM.git', :tag => s.version.to_s }
