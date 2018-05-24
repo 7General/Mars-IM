@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.source_files = 'MarsSDK/Classes/**/*'
   
   s.libraries = 'z','resolv.9'
-  s.frameworks = 'CoreTelephony','SystemConfiguration','CoreGraphics'
+  s.frameworks = 'CoreTelephony','SystemConfiguration','CoreGraphics','UIKit','AVFoundation'
   s.vendored_frameworks = 'MarsSDK/Frameworks/mars.framework'
   s.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lc++']}
   
