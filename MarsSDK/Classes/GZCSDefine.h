@@ -1,10 +1,4 @@
-//
-//  GZCSDefine.h
-//  GZIMCustomService
-//
-//  Created by coderPoo on 2018/3/28.
-//  Copyright © 2018年 guagua-ios. All rights reserved.
-//
+
 
 #ifndef GZCSDefine_h
 #define GZCSDefine_h

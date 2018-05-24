@@ -10,13 +10,6 @@
 // either express or implied. See the License for the specific language governing permissions and
 // limitations under the License.
 
-//
-//  GZIMLogHelper.h
-//  iOSDemo
-//
-//  Created by caoshaokun on 16/11/30.
-//  Copyright © 2016年 caoshaokun. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 #import <mars/xlog/xloggerbase.h>
