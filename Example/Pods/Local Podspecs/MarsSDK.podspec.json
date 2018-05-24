@@ -1,6 +1,6 @@
 {
   "name": "MarsSDK",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "A short description of MarsSDK.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/wanghuizhou/MarsSDK",
@@ -13,10 +13,35 @@
   },
   "source": {
     "git": "https://github.com/wanghuizhou/MarsSDK.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "MarsSDK/Classes/**/*"
+  "resource_bundles": {
+    "MarsSDK": [
+      "MarsSDK/Assets/*.png"
+    ]
+  },
+  "source_files": "MarsSDK/Classes/**/*",
+  "libraries": [
+    "z",
+    "resolv.9"
+  ],
+  "frameworks": [
+    "CoreTelephony",
+    "SystemConfiguration",
+    "CoreGraphics"
+  ],
+  "vendored_frameworks": "MarsSDK/Frameworks/mars.framework",
+  "user_target_xcconfig": {
+    "OTHER_LDFLAGS": [
+      "-lc++"
+    ]
+  },
+  "dependencies": {
+    "Protobuf": [
+
+    ]
+  }
 }

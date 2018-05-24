@@ -1,16 +1,23 @@
 PODS:
-  - MarsSDK (0.1.0)
+  - MarsSDK (1.0.0):
+    - Protobuf
+  - Protobuf (3.5.0)
 
 DEPENDENCIES:
   - MarsSDK (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Protobuf
 
 EXTERNAL SOURCES:
   MarsSDK:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MarsSDK: 631e8aaa587f69206f6de870cd53b064a1f86d66
+  MarsSDK: 8f01f2d9dc243feff6e93bde42ee94565c524bf2
+  Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
 
-PODFILE CHECKSUM: dcd070290e1f466b458d5bb58b5be3c4343d3848
+PODFILE CHECKSUM: ea7aa59f785276dd16cbad05dc7e27f10b2bf257
 
 COCOAPODS: 1.5.0.beta.1

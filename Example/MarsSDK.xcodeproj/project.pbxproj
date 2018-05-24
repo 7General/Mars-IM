@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04082789671EF29D477CC04E /* libPods-MarsSDK_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD55012D7DE4D955F4FDA17 /* libPods-MarsSDK_Example.a */; };
+		5F549F00C701FDB1DA17753D /* libPods-MarsSDK_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5794E33ADF12A5B9109CBB /* libPods-MarsSDK_Tests.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -22,8 +24,6 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		CD1F7E9F9ECAC0A5E7F704BE /* Pods_MarsSDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8382370AD36A26F78E0CA18 /* Pods_MarsSDK_Example.framework */; };
-		E36D0C4236C72A8696FD39C4 /* Pods_MarsSDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76C50C369983D684B0F8E18 /* Pods_MarsSDK_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		260C529F37749B8116DCC3CF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		41474E3E67B584CFBEF9779B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		260C529F37749B8116DCC3CF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		41474E3E67B584CFBEF9779B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		552509E425CE88A28A62075B /* Pods-MarsSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsSDK_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarsSDK_Tests/Pods-MarsSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* MarsSDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsSDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,12 +61,12 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D9D901244648293956CE391 /* Pods-MarsSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsSDK_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarsSDK_Example/Pods-MarsSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
+		7DD55012D7DE4D955F4FDA17 /* libPods-MarsSDK_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarsSDK_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E5794E33ADF12A5B9109CBB /* libPods-MarsSDK_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MarsSDK_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82B4D9805E979C239FD99D92 /* Pods-MarsSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsSDK_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarsSDK_Example/Pods-MarsSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0D69C3BD2407465F482E843 /* Pods-MarsSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsSDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarsSDK_Tests/Pods-MarsSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C8382370AD36A26F78E0CA18 /* Pods_MarsSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E76C50C369983D684B0F8E18 /* Pods_MarsSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED3E5252DADD88085FE5EFC8 /* MarsSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MarsSDK.podspec; path = ../MarsSDK.podspec; sourceTree = "<group>"; };
+		ED3E5252DADD88085FE5EFC8 /* MarsSDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MarsSDK.podspec; path = ../MarsSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				CD1F7E9F9ECAC0A5E7F704BE /* Pods_MarsSDK_Example.framework in Frameworks */,
+				04082789671EF29D477CC04E /* libPods-MarsSDK_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				E36D0C4236C72A8696FD39C4 /* Pods_MarsSDK_Tests.framework in Frameworks */,
+				5F549F00C701FDB1DA17753D /* libPods-MarsSDK_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +123,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				C8382370AD36A26F78E0CA18 /* Pods_MarsSDK_Example.framework */,
-				E76C50C369983D684B0F8E18 /* Pods_MarsSDK_Tests.framework */,
+				7DD55012D7DE4D955F4FDA17 /* libPods-MarsSDK_Example.a */,
+				7E5794E33ADF12A5B9109CBB /* libPods-MarsSDK_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				32EEF01DC50277EF5C91D7F9 /* [CP] Embed Pods Frameworks */,
+				E2BC91C0FCC2A95CFF3F87B6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,24 +294,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		32EEF01DC50277EF5C91D7F9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MarsSDK_Example/Pods-MarsSDK_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/MarsSDK/MarsSDK.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarsSDK.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MarsSDK_Example/Pods-MarsSDK_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3443AE4C96A826C4A60FCF21 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -328,6 +310,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2BC91C0FCC2A95CFF3F87B6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MarsSDK_Example/Pods-MarsSDK_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MarsSDK/MarsSDK.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MarsSDK.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MarsSDK_Example/Pods-MarsSDK_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F06125EC2F80B280CCD62A96 /* [CP] Check Pods Manifest.lock */ = {
