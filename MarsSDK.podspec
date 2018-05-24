@@ -18,14 +18,12 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/wanghuizhou/MarsSDK'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wanghuizhou' => 'wanghuizhou@guazi.com' }
-  s.source           = { :git => 'https://github.com/wanghuizhou/MarsSDK.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/7General/Mars-IM.git', :tag => s.version.to_s }
 
 
   s.ios.deployment_target = '8.0'
   
-  s.resource_bundles = {
-      'MarsSDK' => ['MarsSDK/Assets/*.png']
-  }
+  
 
   s.source_files = 'MarsSDK/Classes/**/*'
   
