@@ -1,0 +1,16 @@
+PODS:
+  - MarsSDK (0.1.0)
+
+DEPENDENCIES:
+  - MarsSDK (from `../`)
+
+EXTERNAL SOURCES:
+  MarsSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MarsSDK: 631e8aaa587f69206f6de870cd53b064a1f86d66
+
+PODFILE CHECKSUM: e9ed405755f6ec731613186536fe30f40bef145b
+
+COCOAPODS: 1.5.0.beta.1
