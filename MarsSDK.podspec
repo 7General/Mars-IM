@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MarsSDK'
-  s.version          = '1.0.0'
+  s.version          = '1.0.2'
   s.summary          = 'A short description of MarsSDK.'
 
   s.description      = <<-DESC

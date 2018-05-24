@@ -7,7 +7,7 @@
 //
 
 #import "MSViewController.h"
-#import <MarsSDK/GZCSLogHelper.h>
+
 
 @interface MSViewController ()
 
@@ -19,7 +19,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    CSLOG_INFO(@"-------------");
+    
 }
 
 - (void)didReceiveMemoryWarning
