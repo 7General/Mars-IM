@@ -13,6 +13,11 @@
 #import <Foundation/Foundation.h>
 
 
+typedef NS_ENUM(int32_t, CmdID) {
+    /** 登录 */
+    CmdID_CmdIdAuth = 1001,
+};
+
 /// object is integer enum (GZIMLongLinkStatus)
 FOUNDATION_EXPORT NSString * const kGZCSLongLinkStatusObserverName;
 FOUNDATION_EXPORT NSString * const kGZCSLongLinkStatus;
@@ -51,7 +56,7 @@ typedef NS_ENUM(NSInteger, GZCSLongLinkStatus){
 - (int)OnTaskEndWithTaskID:(uint32_t)tid userContext:(const void *)context errType:(int)errtype errCode:(int)errcode;
 
 - (BOOL)isAuthed;
-- (NSInteger)authCmdId;
+- (CmdID)authCmdId;
 - (NSData*)authRequestData;
 - (BOOL)authResponseData:(NSData*)responseData;
 
@@ -60,7 +65,7 @@ typedef NS_ENUM(NSInteger, GZCSLongLinkStatus){
 
 + (instancetype)sharedLongLink;
 
-- (void)addLongLinkPushObserver:(id<GZCSLongLinkPushDelegate>)observer withCmdId:(NSInteger)cmdId;
+- (void)addLongLinkPushObserver:(id<GZCSLongLinkPushDelegate>)observer withCmdId:(CmdID)cmdId;
 
 #pragma mark - Public
 - (void)createLongLinkWithAddress:(NSString *)addr ports:(NSArray *)ports clientVersion:(uint32_t)version;

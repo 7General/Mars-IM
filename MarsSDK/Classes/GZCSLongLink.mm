@@ -32,6 +32,11 @@ NSString * const kGZCSLongLinkStatusObserverName = @"kGZCSLongLinkStatusObserver
 NSString * const kGZCSLongLinkStatus = @"kGZCSLongLinkStatus";
 NSString * const kGZCSLongLinkUniqueTaskId = @"kGZCSLongLinkUniqueTaskId";
 
+
+
+
+
+
 using namespace mars::stn;
 @interface GZCSLongLink () <NetworkStatusDelegate>
 {
@@ -65,7 +70,7 @@ using namespace mars::stn;
     _sendTaskDictionary = nil;
 }
 
-- (void)addLongLinkPushObserver:(id<GZCSLongLinkPushDelegate>)observer withCmdId:(NSInteger)cmdId {
+- (void)addLongLinkPushObserver:(id<GZCSLongLinkPushDelegate>)observer withCmdId:(CmdID)cmdId {
     [_pushObservers setObject:observer forKey:@(cmdId)];
 }
 
@@ -225,8 +230,8 @@ using namespace mars::stn;
     return authed;
 }
 
-- (NSInteger)authCmdId {
-    return 12;
+- (CmdID)authCmdId {
+    return CmdID_CmdIdAuth;
 }
 
 - (NSData*)authRequestData {
